@@ -10,4 +10,24 @@ import UIKit
 
 class NewContactViewModel: NSObject {
 
+//    let coreDataStack = CoreDataStack()
+    
+    func texte() {
+        let contact = Contact(context: CoreDataStack.shared.managedContext)
+//        let email = Email(context: CoreDataStack.shared.managedContext)
+//        email.email = "teste.teste"
+//        
+//        let phone = Phone(context: CoreDataStack.shared.managedContext)
+//        phone.phone = "tedsasjd"
+//
+//        contact.addToEmails(email)
+//        contact.addToPhones(phone)
+        
+        do {
+            try CoreDataStack.shared.managedContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    
 }

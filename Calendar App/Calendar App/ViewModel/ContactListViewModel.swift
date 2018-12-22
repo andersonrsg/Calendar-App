@@ -7,8 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactListViewModel: NSObject {
-
-    var contacts: [String] = ["Anderson", "Anderson", "Anderson", "Anderson", "Anderson"]
+    
+    // MARK: Properties
+    
+    var contactList: NSFetchedResultsController<Contact>!
+//    let coreDataStack = CoreDataStack()
+    override init() {
+        let request: NSFetchRequest<Contact> = Contact.fetchRequest()
+        
+        let descriptor1 = NSSortDescriptor(key: "firstName", ascending: true)
+        request.sortDescriptors = [descriptor1]
+        
+        contactList = NSFetchedResultsController(fetchRequest: request,
+                                                 managedObjectContext: CoreDataStack.shared.managedContext,
+                                                 sectionNameKeyPath: nil,
+                                                 cacheName:nil)
+        
+        
+        do {
+            try contactList.performFetch()
+        } catch {
+            print("Fetching error: \(error)")
+        }
+        
+    }
+    
+    
+    
 }
+
+

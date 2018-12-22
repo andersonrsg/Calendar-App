@@ -10,12 +10,17 @@
 		71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */; };
 		71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */; };
 		71A35DBA21CD462E000BE53F /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */; };
-		71B0DA9121CC45C600CD5C4B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0DA9021CC45C500CD5C4B /* Contact.swift */; };
-		71B0DA9221CC45C600CD5C4B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0DA9021CC45C500CD5C4B /* Contact.swift */; };
-		71BA141221CD91CC003D7933 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 71BA141121CD91CC003D7933 /* .gitkeep */; };
+		71BA141421CDA17C003D7933 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141321CDA17C003D7933 /* CoreDataStack.swift */; };
+		71BA141521CDA17C003D7933 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141321CDA17C003D7933 /* CoreDataStack.swift */; };
+		71BA141721CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */; };
+		71BA141821CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */; };
+		71BA141A21CDC684003D7933 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141921CDC684003D7933 /* Session.swift */; };
+		71BA141B21CDC684003D7933 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141921CDC684003D7933 /* Session.swift */; };
+		71BA141E21CDCE0F003D7933 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141D21CDCE0F003D7933 /* CustomTextField.swift */; };
+		71BA141F21CDCE0F003D7933 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141D21CDCE0F003D7933 /* CustomTextField.swift */; };
 		71C595D121CA64EA004DB76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D021CA64EA004DB76A /* AppDelegate.swift */; };
 		71C595D621CA64EA004DB76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C595D421CA64EA004DB76A /* Main.storyboard */; };
-		71C595D921CA64EA004DB76A /* Calendar_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D721CA64EA004DB76A /* Calendar_App.xcdatamodeld */; };
+		71C595D921CA64EA004DB76A /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D721CA64EA004DB76A /* Contacts.xcdatamodeld */; };
 		71C595DB21CA64EB004DB76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C595DA21CA64EB004DB76A /* Assets.xcassets */; };
 		71C595DE21CA64EB004DB76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C595DC21CA64EB004DB76A /* LaunchScreen.storyboard */; };
 		71C595E921CA64EB004DB76A /* Calendar_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C595E821CA64EB004DB76A /* Calendar_AppTests.swift */; };
@@ -62,8 +67,10 @@
 		71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCell.swift; sourceTree = "<group>"; };
 		71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
-		71B0DA9021CC45C500CD5C4B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		71BA141121CD91CC003D7933 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		71BA141321CDA17C003D7933 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
+		71BA141921CDC684003D7933 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		71BA141D21CDCE0F003D7933 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		71C595CD21CA64EA004DB76A /* Calendar App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C595D021CA64EA004DB76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C595D521CA64EA004DB76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,7 +184,6 @@
 		71C5960121CA6EE5004DB76A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				71B0DA9021CC45C500CD5C4B /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				71C5961C21CB25B1004DB76A /* Constants.swift */,
+				71BA141921CDC684003D7933 /* Session.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -210,8 +217,9 @@
 		71C5960521CA6F18004DB76A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				71C595D721CA64EA004DB76A /* Calendar_App.xcdatamodeld */,
 				71C595DA21CA64EB004DB76A /* Assets.xcassets */,
+				71C595D721CA64EA004DB76A /* Contacts.xcdatamodeld */,
+				71BA141321CDA17C003D7933 /* CoreDataStack.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -219,7 +227,7 @@
 		71C5960621CA6F22004DB76A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				71BA141121CD91CC003D7933 /* .gitkeep */,
+				71BA141D21CDCE0F003D7933 /* CustomTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -263,8 +271,9 @@
 		71C5960E21CB2318004DB76A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */,
 				71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */,
+				71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */,
+				71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -290,6 +299,7 @@
 				71C595CA21CA64EA004DB76A /* Frameworks */,
 				71C595CB21CA64EA004DB76A /* Resources */,
 				40434D858E7EFE2DE4ED9145 /* [CP] Embed Pods Frameworks */,
+				71BA141C21CDC948003D7933 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -387,7 +397,6 @@
 				71C595DE21CA64EB004DB76A /* LaunchScreen.storyboard in Resources */,
 				71C595DB21CA64EB004DB76A /* Assets.xcassets in Resources */,
 				71C595D621CA64EA004DB76A /* Main.storyboard in Resources */,
-				71BA141221CD91CC003D7933 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +453,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		71BA141C21CDC948003D7933 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -454,9 +480,12 @@
 				71C5960B21CB20FC004DB76A /* ContactListTableViewController.swift in Sources */,
 				71C5961421CB233F004DB76A /* NewContactViewModel.swift in Sources */,
 				71C5961021CB232B004DB76A /* ContactListViewModel.swift in Sources */,
-				71C595D921CA64EA004DB76A /* Calendar_App.xcdatamodeld in Sources */,
-				71B0DA9121CC45C600CD5C4B /* Contact.swift in Sources */,
+				71BA141421CDA17C003D7933 /* CoreDataStack.swift in Sources */,
+				71BA141721CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
+				71C595D921CA64EA004DB76A /* Contacts.xcdatamodeld in Sources */,
 				71C5961D21CB25B1004DB76A /* Constants.swift in Sources */,
+				71BA141E21CDCE0F003D7933 /* CustomTextField.swift in Sources */,
+				71BA141A21CDC684003D7933 /* Session.swift in Sources */,
 				71C5961821CB234D004DB76A /* NewContactViewController.swift in Sources */,
 				71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */,
 				71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */,
@@ -472,10 +501,13 @@
 				71C5961521CB233F004DB76A /* NewContactViewModel.swift in Sources */,
 				71C595E921CA64EB004DB76A /* Calendar_AppTests.swift in Sources */,
 				71C5961921CB234D004DB76A /* NewContactViewController.swift in Sources */,
+				71BA141F21CDCE0F003D7933 /* CustomTextField.swift in Sources */,
 				71C5961B21CB2358004DB76A /* ContactListTableViewController.swift in Sources */,
+				71BA141821CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
 				71C5961221CB232F004DB76A /* ContactListViewModel.swift in Sources */,
 				71C5961E21CB25B1004DB76A /* Constants.swift in Sources */,
-				71B0DA9221CC45C600CD5C4B /* Contact.swift in Sources */,
+				71BA141521CDA17C003D7933 /* CoreDataStack.swift in Sources */,
+				71BA141B21CDC684003D7933 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,13 +837,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		71C595D721CA64EA004DB76A /* Calendar_App.xcdatamodeld */ = {
+		71C595D721CA64EA004DB76A /* Contacts.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				71C595D821CA64EA004DB76A /* Calendar_App.xcdatamodel */,
 			);
 			currentVersion = 71C595D821CA64EA004DB76A /* Calendar_App.xcdatamodel */;
-			path = Calendar_App.xcdatamodeld;
+			path = Contacts.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
