@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactListTableViewController: UITableViewController {
-
+    
     // MARK: - Properties
     
-    fileprivate lazy var viewModel = ContactListViewModel()
-    
-    static let NewContactMainInformation = "NewContactTableViewCellMainInformation"
-    
-    static let NewContactListInformation = "NewContactTableViewCellListInformation"
-    
+    lazy var viewModel = ContactListViewModel()
+
+    //    private let refreshControl = UIRefreshControl()
+
+    //    static let NewContactMainInformation = "NewContactTableViewCellMainInformation"
+    //
+    //    static let NewContactListInformation = "NewContactTableViewCellListInformation"
+    //
+
+
     // MARK: - Outlets
     
     
@@ -25,12 +30,10 @@ class ContactListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
+        self.setupRefreshControl()
+        self.refreshContactList(self)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +45,43 @@ class ContactListTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = false
     }
+
+    // MARK: - UI
+
+    func setupRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refreshContactList(_:)), for: .valueChanged)
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if let destination = segue.destination as? NewContactViewController {
+            destination.delegate = self
+
+            if segue.identifier == "GoToNewContactView" {
+                destination.viewMode = .new
+            } else {
+                destination.viewMode = .view
+                destination.viewModel.selectedContact = viewModel.selectedContact
+//                destination.viewModel.contactList = viewModel.contactList
+            }
+        }
+
+    }
     
+    // MARK: Actions
+
+    @objc private func refreshContactList(_ sender: Any) {
+        self.viewModel.fetchContacts(success: { [weak self] in
+            self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
+        })
+    }
+    
+    @IBAction func didPressNewContactButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "GoToNewContactView", sender: self)
+    }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,13 +89,14 @@ class ContactListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contactList.sections?[section].objects?.count ?? 0
+        print(viewModel.contactList?.sections?[section].objects?.count ?? 0)
+        return viewModel.contactList?.sections?[section].objects?.count ?? 0
     }
-    
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? ContactListTableViewCell else {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactListTableViewCellEntry",
+                                                       for: indexPath) as? ContactListTableViewCell else {
+                                                        return UITableViewCell()
         }
         
         cell.setup(contact: viewModel.contactList.object(at: indexPath))
@@ -65,45 +105,42 @@ class ContactListTableViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//
-//        let actionDelete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion  in
-//
-//            completion(true)
-//        }
-//
-////        actionDelete.image = #imageLiteral(resourceName: <#T##String#>)
-//        actionDelete.backgroundColor = .red
-//
-//        return UISwipeActionsConfiguration(actions: [actionDelete])
-//    }
-    
-    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let actionDelete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion  in
-            
-            completion(true)
+    override func tableView(_ tableView: UITableView,
+                            trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let actionDelete = UIContextualAction(style: .destructive,
+                                              title: "Delete") { [weak self] action, view, completion  in
+
+                                                if let contact = self?.viewModel.contactList.object(at: indexPath) {
+                                                    self?.viewModel.contactList.managedObjectContext.delete(contact)
+                                                    do {
+                                                        try self?.viewModel.contactList.managedObjectContext.save()
+                                                    } catch {
+                                                        
+                                                    }
+                                                }
+
+                                                completion(true)
         }
         
-//        actionDelete.image = #imageLiteral(resourceName: )
+        //actionDelete.image = #imageLiteral(resourceName: )
         actionDelete.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [actionDelete])
         
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        self.viewModel.selectedContact = viewModel.contactList.object(at: indexPath)
+        self.performSegue(withIdentifier: "GoToViewContactView", sender: self)
+
     }
-    
-    // MARK: Actions
-    
-    @IBAction func didPressNewContactButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "GoToNewContactView", sender: self)
-    }
-    
     
 }
 
+extension ContactListTableViewController: NewContactViewControllerDelegate {
+    func didFinishAddingContact() {
+        self.refreshContactList(self)
+    }
+}

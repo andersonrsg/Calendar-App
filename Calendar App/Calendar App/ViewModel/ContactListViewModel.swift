@@ -11,32 +11,37 @@ import CoreData
 
 class ContactListViewModel: NSObject {
     
-    // MARK: Properties
-    
+    // MARK: - Properties
     var contactList: NSFetchedResultsController<Contact>!
-//    let coreDataStack = CoreDataStack()
+    var selectedContact: Contact?
+    // MARK: -
+
     override init() {
+
+    }
+
+    // MARK: - Actions
+
+    func fetchContacts(success: () -> Void) {
         let request: NSFetchRequest<Contact> = Contact.fetchRequest()
-        
+
         let descriptor1 = NSSortDescriptor(key: "firstName", ascending: true)
-        request.sortDescriptors = [descriptor1]
+        let descriptor2 = NSSortDescriptor(key: "lastName", ascending: true)
         
+        request.sortDescriptors = [descriptor1, descriptor2]
+
         contactList = NSFetchedResultsController(fetchRequest: request,
-                                                 managedObjectContext: CoreDataStack.shared.managedContext,
+                                                 managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext,
                                                  sectionNameKeyPath: nil,
-                                                 cacheName:nil)
-        
-        
+                                                 cacheName: nil)
+
         do {
             try contactList.performFetch()
+            success()
         } catch {
             print("Fetching error: \(error)")
         }
-        
+
     }
-    
-    
-    
+
 }
-
-

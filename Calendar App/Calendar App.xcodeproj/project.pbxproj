@@ -40,6 +40,16 @@
 		71C5961D21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
 		71C5961E21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
 		71C5961F21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
+		71DEDE3321CEC03000007641 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
+		71DEDE3421CEC03000007641 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
+		71DEDE3621CEE35000007641 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3521CEE35000007641 /* Enums.swift */; };
+		71DEDE3721CEE35000007641 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3521CEE35000007641 /* Enums.swift */; };
+		71DEDE5821CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */; };
+		71DEDE5921CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */; };
+		71DEDE5B21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
+		71DEDE5C21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
+		71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
+		71DEDE5F21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
 		961C60C219298F8DE4EC3779 /* Pods_Calendar_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +99,11 @@
 		71C5961321CB233F004DB76A /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
 		71C5961721CB234D004DB76A /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		71C5961C21CB25B1004DB76A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		71DEDE3221CEC03000007641 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		71DEDE3521CEE35000007641 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		71DEDE5D21CF07A500007641 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +208,7 @@
 			children = (
 				71C5961C21CB25B1004DB76A /* Constants.swift */,
 				71BA141921CDC684003D7933 /* Session.swift */,
+				71DEDE3521CEE35000007641 /* Enums.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -209,7 +225,9 @@
 		71C5960421CA6F08004DB76A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				71DEDE5D21CF07A500007641 /* UIFontExtension.swift */,
 				71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */,
+				71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +273,7 @@
 			children = (
 				71C5960F21CB232B004DB76A /* ContactListViewModel.swift */,
 				71C5961321CB233F004DB76A /* NewContactViewModel.swift */,
+				71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +283,7 @@
 			children = (
 				71C5960A21CB20FC004DB76A /* ContactListTableViewController.swift */,
 				71C5961721CB234D004DB76A /* NewContactViewController.swift */,
+				71DEDE3221CEC03000007641 /* BaseViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -468,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -478,10 +498,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C5960B21CB20FC004DB76A /* ContactListTableViewController.swift in Sources */,
+				71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */,
+				71DEDE5B21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */,
 				71C5961421CB233F004DB76A /* NewContactViewModel.swift in Sources */,
 				71C5961021CB232B004DB76A /* ContactListViewModel.swift in Sources */,
 				71BA141421CDA17C003D7933 /* CoreDataStack.swift in Sources */,
+				71DEDE5821CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */,
 				71BA141721CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
+				71DEDE3321CEC03000007641 /* BaseViewController.swift in Sources */,
 				71C595D921CA64EA004DB76A /* Contacts.xcdatamodeld in Sources */,
 				71C5961D21CB25B1004DB76A /* Constants.swift in Sources */,
 				71BA141E21CDCE0F003D7933 /* CustomTextField.swift in Sources */,
@@ -490,6 +514,7 @@
 				71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */,
 				71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */,
 				71C595D121CA64EA004DB76A /* AppDelegate.swift in Sources */,
+				71DEDE3621CEE35000007641 /* Enums.swift in Sources */,
 				71A35DBA21CD462E000BE53F /* UITableViewCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,15 +524,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C5961521CB233F004DB76A /* NewContactViewModel.swift in Sources */,
+				71DEDE5C21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */,
 				71C595E921CA64EB004DB76A /* Calendar_AppTests.swift in Sources */,
 				71C5961921CB234D004DB76A /* NewContactViewController.swift in Sources */,
 				71BA141F21CDCE0F003D7933 /* CustomTextField.swift in Sources */,
 				71C5961B21CB2358004DB76A /* ContactListTableViewController.swift in Sources */,
 				71BA141821CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
 				71C5961221CB232F004DB76A /* ContactListViewModel.swift in Sources */,
+				71DEDE5921CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */,
 				71C5961E21CB25B1004DB76A /* Constants.swift in Sources */,
 				71BA141521CDA17C003D7933 /* CoreDataStack.swift in Sources */,
 				71BA141B21CDC684003D7933 /* Session.swift in Sources */,
+				71DEDE5F21CF07A500007641 /* UIFontExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +548,8 @@
 				71C5960C21CB20FC004DB76A /* ContactListTableViewController.swift in Sources */,
 				71C5961621CB233F004DB76A /* NewContactViewModel.swift in Sources */,
 				71C595F421CA64EB004DB76A /* Calendar_AppUITests.swift in Sources */,
+				71DEDE3421CEC03000007641 /* BaseViewController.swift in Sources */,
+				71DEDE3721CEE35000007641 /* Enums.swift in Sources */,
 				71C5961F21CB25B1004DB76A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

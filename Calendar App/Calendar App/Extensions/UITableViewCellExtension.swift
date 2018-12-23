@@ -10,7 +10,6 @@ import UIKit
 
 extension UITableViewCell {
     
-    
     func removeSelectionHighlight() {
         self.selectionStyle = .none
     }
