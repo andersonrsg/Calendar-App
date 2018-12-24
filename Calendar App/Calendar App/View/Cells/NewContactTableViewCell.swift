@@ -129,7 +129,7 @@ class NewContactTableViewCell: BaseTableViewCell {
         self.dataTextField.text = value
     }
     
-    func setupListCell(isLastItem: Bool) {
+    func setupListCell(isLastItem: Bool, showActionOption: Bool) {
         super.setup()
         
         guard let indexPath = indexPath else {
@@ -142,7 +142,7 @@ class NewContactTableViewCell: BaseTableViewCell {
         
         if isLastItem {
             dataTextField.addLeftView(image: viewModel.iconAdd)
-            (dataTextField.leftView as? UIImageView)?.tintColor = UIColor.green
+            (dataTextField.leftView as? UIImageView)?.tintColor = UIColor.ImageTintColors.addNewDataColor
             
             tapGestureRecognizer = UITapGestureRecognizer(
                 target: self,
@@ -150,7 +150,7 @@ class NewContactTableViewCell: BaseTableViewCell {
             
         } else {
             dataTextField.addLeftView(image: viewModel.iconRemove)
-            (dataTextField.leftView as? UIImageView)?.tintColor = UIColor.red
+            (dataTextField.leftView as? UIImageView)?.tintColor = UIColor.ImageTintColors.removeDataColor
             
             tapGestureRecognizer = UITapGestureRecognizer(
                 target: self,
@@ -164,9 +164,66 @@ class NewContactTableViewCell: BaseTableViewCell {
         dataTextField.placeholder = viewModel.placeHolderList[indexPath.section]
         dataTextField.keyboardType = viewModel.keyboardTypeList[indexPath.section]
         dataTextField.textContentType = viewModel.keyboardContentTypeList[indexPath.section]
+        
+        if showActionOption && !isLastItem {
+            if indexPath.section == EnumContactDataSection.phone.rawValue ||
+                indexPath.section == EnumContactDataSection.email.rawValue {
+                
+                dataTextField.addRightView(image: viewModel.itemActionList[indexPath.section])
+                (dataTextField.rightView as? UIImageView)?.tintColor = viewModel.itemActionColors[indexPath.section]
+                
+                addAction()
+                
+            }
+        }
+        
     }
     
-    @objc func removeItem(tapGestureRecognizer: UITapGestureRecognizer) {
+    // MARK: - Private Functions
+    
+    private func addAction() {
+        let actionGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(performAction(tapGestureRecognizer:)))
+        
+        dataTextField.rightView?.isUserInteractionEnabled = true
+        dataTextField.rightView?.addGestureRecognizer(actionGestureRecognizer)
+    }
+    
+    @objc private func performAction(tapGestureRecognizer: UITapGestureRecognizer) {
+        
+        switch indexPath?.section {
+        case EnumContactDataSection.phone.rawValue:
+            
+            if let phone = dataTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
+                if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            }
+            
+        case EnumContactDataSection.email.rawValue:
+            
+            if let email = dataTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
+                if let url = URL(string: "mailto:\(email)"), UIApplication.shared.canOpenURL(url) {
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            }
+            
+        default:
+            break
+        }
+        
+    }
+    
+    @objc private func removeItem(tapGestureRecognizer: UITapGestureRecognizer) {
         guard let indexPath = indexPath else {
             return
         }
@@ -181,7 +238,7 @@ class NewContactTableViewCell: BaseTableViewCell {
         
     }
     
-    @objc func addItem(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc private func addItem(tapGestureRecognizer: UITapGestureRecognizer) {
         guard let indexPath = indexPath else {
             return
         }

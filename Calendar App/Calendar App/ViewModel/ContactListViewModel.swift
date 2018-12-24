@@ -13,6 +13,10 @@ class ContactListViewModel: NSObject {
     
     // MARK: - Properties
     var contactList: NSFetchedResultsController<Contact>!
+    var searchResults: [Contact]?
+
+    var isSearching = false
+    
     var selectedContact: Contact?
     // MARK: -
 
@@ -30,13 +34,17 @@ class ContactListViewModel: NSObject {
         
         request.sortDescriptors = [descriptor1, descriptor2]
 
-        contactList = NSFetchedResultsController(fetchRequest: request,
-                                                 managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext,
-                                                 sectionNameKeyPath: nil,
-                                                 cacheName: nil)
+        contactList = NSFetchedResultsController(
+            fetchRequest: request,
+            managedObjectContext: CoreDataStack.shared.persistentContainer.viewContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
 
         do {
             try contactList.performFetch()
+            searchResults = contactList.fetchedObjects
+            
             success()
         } catch {
             print("Fetching error: \(error)")

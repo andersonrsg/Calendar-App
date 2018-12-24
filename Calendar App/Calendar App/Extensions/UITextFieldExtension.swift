@@ -15,5 +15,11 @@ extension UITextField {
         self.leftView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
         (self.leftView as? UIImageView)?.image = image
     }
+    
+    func addRightView(image: UIImage) {
+        self.rightViewMode = .always
+        self.rightView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+        (self.rightView as? UIImageView)?.image = image
+    }
 
 }

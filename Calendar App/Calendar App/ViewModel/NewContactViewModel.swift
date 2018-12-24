@@ -24,7 +24,6 @@ class NewContactViewModel {
     }
     
     func setupNewContact() {
-        print("CALLED")
         selectedContact = Contact(context: context)
     }
     

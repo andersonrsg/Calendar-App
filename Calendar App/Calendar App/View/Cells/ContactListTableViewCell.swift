@@ -10,6 +10,15 @@ import UIKit
 
 class ContactListTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
+    private var contact: Contact?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var callButton: UIButton!
+    
+    // MARK: - View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +30,13 @@ class ContactListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(contact: Contact) {
+    func setup(contact: Contact?) {
+        guard let contact = contact else {
+            return
+        }
+        
+        self.contact = contact
+        
         var labelText = ""
         labelText = contact.firstName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
@@ -30,11 +45,42 @@ class ContactListTableViewCell: UITableViewCell {
         }
         
         if labelText == "" {
-        
+            
             labelText = "No Name"
-            textLabel?.font = UIFont.italicSystemFont(ofSize: textLabel?.font.pointSize ?? 17)
+            titleLabel?.font = UIFont.italicSystemFont(ofSize: titleLabel?.font.pointSize ?? 17)
         }
         
-        textLabel?.text = labelText
+        titleLabel?.text = labelText
+        
+        callButton.tintColor = UIColor.ImageTintColors.phoneColor
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func didPressCallButton(_ sender: Any) {
+        performCall()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func performCall() {
+        guard let contact = contact else {
+            return
+        }
+        
+        let phone = contact.phones?.allObjects.first as? Phone
+        if var phoneNumber = phone?.phone, phoneNumber != "" {
+            phoneNumber = phoneNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+                
+            }
+            
+        }
     }
 }

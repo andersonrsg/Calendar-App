@@ -30,7 +30,9 @@ class NewContactViewController: BaseViewController {
     }
     
     // USed to add focus on the text field after table view reload
-    var selectedRow: IndexPath?
+    fileprivate var selectedRow: IndexPath?
+    // Used to show actions options on the cell such as call or send email.
+    fileprivate var showActionOption: Bool = false
     
     // MARK: - Outlets
     
@@ -49,13 +51,13 @@ class NewContactViewController: BaseViewController {
     private func setupLayout() {
         switch viewMode {
         case .new:
-            print("CALLED2")
+            
             viewModel.setupNewContact()
         case .edit:
             break
         case .view:
-//            completeButton.title = "Edit"
-            break
+            self.title = ""
+            self.showActionOption = true
         }
     }
     
@@ -152,7 +154,7 @@ extension NewContactViewController: UITableViewDataSource {
             cell.delegate = self
             
             let isLastItem = viewModel.isLastItem(indexPath)
-            cell.setupListCell(isLastItem: isLastItem)
+            cell.setupListCell(isLastItem: isLastItem, showActionOption: showActionOption)
             
             if !isLastItem {
                 if viewMode == .edit || viewMode == .view {
@@ -167,7 +169,8 @@ extension NewContactViewController: UITableViewDataSource {
                         
                     case EnumContactDataSection.address.rawValue:
                         cell.setupDefaultValue(value:
-                            (viewModel.selectedContact?.addresses?.allObjects[indexPath.row] as? Address)?.address ?? "")
+                            (viewModel.selectedContact?.addresses?.allObjects[indexPath.row]
+                                as?Address)?.address ?? "")
                         
                     default:
                         break

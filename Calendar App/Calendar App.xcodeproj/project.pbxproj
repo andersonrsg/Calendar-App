@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7102AF5B21D10CDC000757AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102AF5A21D10CDC000757AB /* UIColorExtension.swift */; };
+		711BE90221D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
+		711BE90321D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
+		711BE90421D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
+		711BE90521D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
+		711BE90621D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
+		711BE90721D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
 		71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */; };
 		71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */; };
 		71A35DBA21CD462E000BE53F /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */; };
@@ -76,6 +83,9 @@
 		03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456514586351327AF47F8E4F /* Pods-Calendar App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App.debug.xcconfig"; sourceTree = "<group>"; };
 		5AC1C097EB78978E232ECFDF /* Pods-Calendar App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App.release.xcconfig"; sourceTree = "<group>"; };
+		7102AF5A21D10CDC000757AB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		711BE90021D0858100A7F45F /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
+		711BE90121D0858100A7F45F /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCell.swift; sourceTree = "<group>"; };
 		71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
@@ -114,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711BE90521D0858100A7F45F /* HockeySDK.framework in Frameworks */,
 				961C60C219298F8DE4EC3779 /* Pods_Calendar_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711BE90621D0858100A7F45F /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711BE90721D0858100A7F45F /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +151,20 @@
 		1F60FA90D27C65E01D7FD44F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				711BE8FF21D0858100A7F45F /* HockeySDK.embeddedframework */,
 				03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		711BE8FF21D0858100A7F45F /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				711BE90021D0858100A7F45F /* HockeySDKResources.bundle */,
+				711BE90121D0858100A7F45F /* HockeySDK.framework */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework";
 			sourceTree = "<group>";
 		};
 		71C595C421CA64EA004DB76A = {
@@ -228,6 +252,7 @@
 		71C5960421CA6F08004DB76A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7102AF5A21D10CDC000757AB /* UIColorExtension.swift */,
 				71DEDE5D21CF07A500007641 /* UIFontExtension.swift */,
 				71DEDE6221D0211100007641 /* DateExtension.swift */,
 				71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */,
@@ -419,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C595DE21CA64EB004DB76A /* LaunchScreen.storyboard in Resources */,
+				711BE90221D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
 				71C595DB21CA64EB004DB76A /* Assets.xcassets in Resources */,
 				71C595D621CA64EA004DB76A /* Main.storyboard in Resources */,
 			);
@@ -428,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711BE90321D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711BE90421D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +537,7 @@
 				71C5961021CB232B004DB76A /* ContactListViewModel.swift in Sources */,
 				71BA141421CDA17C003D7933 /* CoreDataStack.swift in Sources */,
 				71DEDE5821CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */,
+				7102AF5B21D10CDC000757AB /* UIColorExtension.swift in Sources */,
 				71BA141721CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
 				71DEDE3321CEC03000007641 /* BaseViewController.swift in Sources */,
 				71C595D921CA64EA004DB76A /* Contacts.xcdatamodeld in Sources */,
@@ -716,17 +745,23 @@
 			baseConfigurationReference = 456514586351327AF47F8E4F /* Pods-Calendar App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4764BD9395;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "Calendar App/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andersongralha.Calendar-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AndersonGralha.ContactApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -735,17 +770,23 @@
 			baseConfigurationReference = 5AC1C097EB78978E232ECFDF /* Pods-Calendar App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4764BD9395;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "Calendar App/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andersongralha.Calendar-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AndersonGralha.ContactApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -756,6 +797,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4764BD9395;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "Calendar AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -777,6 +822,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4764BD9395;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "Calendar AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -797,6 +846,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4764BD9395;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "Calendar AppUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -817,6 +870,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4764BD9395;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "Calendar AppUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

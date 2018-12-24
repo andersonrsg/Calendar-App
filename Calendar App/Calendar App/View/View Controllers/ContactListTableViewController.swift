@@ -15,23 +15,17 @@ class ContactListTableViewController: UITableViewController {
     
     lazy var viewModel = ContactListViewModel()
     
-    //    private let refreshControl = UIRefreshControl()
-    
-    //    static let NewContactMainInformation = "NewContactTableViewCellMainInformation"
-    //
-    //    static let NewContactListInformation = "NewContactTableViewCellListInformation"
-    //
-    
+    fileprivate var searchController = UISearchController()
+    fileprivate var resultsController = UITableViewController()
     
     // MARK: - Outlets
     
-    
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupRefreshControl()
+        self.setupSearch()
         self.refreshContactList(self)
         
     }
@@ -48,9 +42,18 @@ class ContactListTableViewController: UITableViewController {
     
     // MARK: - UI
     
-    func setupRefreshControl() {
+    private func setupRefreshControl() {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refreshContactList(_:)), for: .valueChanged)
+    }
+    
+    private func setupSearch() {
+        searchController = UISearchController(searchResultsController: resultsController)
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        
+        resultsController.tableView.delegate = self
+        resultsController.tableView.dataSource = self
     }
     
     // MARK: - Navigation
@@ -89,8 +92,11 @@ class ContactListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.contactList?.sections?[section].objects?.count ?? 0)
-        return viewModel.contactList?.sections?[section].objects?.count ?? 0
+        if viewModel.isSearching {
+            return viewModel.searchResults?.count ?? 0
+        } else {
+            return viewModel.contactList?.sections?[section].objects?.count ?? 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,7 +105,11 @@ class ContactListTableViewController: UITableViewController {
                                                         return UITableViewCell()
         }
         
-        cell.setup(contact: viewModel.contactList.object(at: indexPath))
+        if viewModel.isSearching {
+            cell.setup(contact: viewModel.searchResults?[indexPath.row])
+        } else {
+            cell.setup(contact: viewModel.contactList.object(at: indexPath))
+        }
         
         return cell
     }
@@ -109,7 +119,7 @@ class ContactListTableViewController: UITableViewController {
                             trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let actionDelete = UIContextualAction(style: .destructive,
-                                              title: "Delete") { [weak self] action, view, completion  in
+                                              title: "Delete") { [weak self] _, _, completion  in
                                                 
                                                 if let contact = self?.viewModel.contactList.object(at: indexPath) {
                                                     self?.viewModel.contactList.managedObjectContext.delete(contact)
@@ -123,7 +133,6 @@ class ContactListTableViewController: UITableViewController {
                                                 completion(true)
         }
         
-        //actionDelete.image = #imageLiteral(resourceName: )
         actionDelete.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [actionDelete])
@@ -132,15 +141,35 @@ class ContactListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.viewModel.selectedContact = viewModel.contactList.object(at: indexPath)
+        if viewModel.isSearching {
+            self.viewModel.selectedContact = viewModel.searchResults?[indexPath.row]
+        } else {
+            self.viewModel.selectedContact = viewModel.contactList.object(at: indexPath)
+        
+        }
         self.performSegue(withIdentifier: "GoToViewContactView", sender: self)
         
     }
     
 }
 
+// MARK: - New Contact View Controller Delegate
 extension ContactListTableViewController: NewContactViewControllerDelegate {
     func didFinishAddingContact() {
         self.refreshContactList(self)
+    }
+}
+
+// MARK: - Results Controller Delegate
+extension ContactListTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text {
+            if !text.isEmpty {
+                viewModel.searchResults = viewModel.contactList.fetchedObjects?.filter {
+                    $0.firstName?.contains(text) ?? false
+                }
+            }
+        }
+        tableView.reloadData()
     }
 }
