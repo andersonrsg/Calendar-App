@@ -45,6 +45,7 @@ class NewContactViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        setupBackButton()
     }
     
     // MARK: - UI
@@ -61,21 +62,38 @@ class NewContactViewController: BaseViewController {
         }
     }
     
-    // Mark -- Actions
+    private func setupBackButton() {
+        self.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didPressBackButton))
+        self.navigationItem.leftBarButtonItem = backButton
+    }
     
-    //    @IBAction func didPressCancelButton(_ sender: Any) {
-    //        self.navigationController?.dismiss(animated: true, completion: nil)
-    //    }
+    // Mark -- Actions
+    @objc func didPressBackButton(_ sender: Any) {
+        if viewMode == .new {
+            self.viewModel.discardChanges()
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func didPressDoneButton(_ sender: Any) {
         
-        viewModel.addContact(success: { 
-            delegate?.didFinishAddingContact()
-        }, failure: { [weak self] in
-            self?.showAlert(error: $0)
+        viewModel.isValidContact(success: {
+            
+            viewModel.addContact(success: {
+                delegate?.didFinishAddingContact()
+            }, failure: { [weak self] in
+                self?.showAlert(error: $0)
+            })
+            
+            self.navigationController?.popViewController(animated: true)
+            
+        }, error: { error in
+            
+            self.showAlert(title: "Error", error: error)
+            
         })
         
-        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -248,29 +266,35 @@ extension NewContactViewController: NewContactTableViewDelegate {
             if let value = value as? String {
                 self.viewModel.selectedContact?.firstName = value
             }
+            
         case .lastName:
             if let value = value as? String {
                 self.viewModel.selectedContact?.lastName = value
             }
+            
         case .birthday:
             if let value = value as? Date {
                 self.viewModel.selectedContact?.dateOfBirth = value
             }
+            
         case .address(let index):
             if let value = value as? String,
                 let addresses = self.viewModel.selectedContact?.addresses?.allObjects as? [Address] {
                 addresses[index].address = value
             }
+            
         case .phone(let index):
             if let value = value as? String,
                 let phones = self.viewModel.selectedContact?.phones?.allObjects as? [Phone] {
                 phones[index].phone = value
             }
+            
         case .email(let index):
             if let value = value as? String,
                 let emails = self.viewModel.selectedContact?.emails?.allObjects as? [Email] {
                 emails[index].email = value
             }
+            
         }
     }
 }

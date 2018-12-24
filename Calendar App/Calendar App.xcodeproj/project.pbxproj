@@ -8,6 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		7102AF5B21D10CDC000757AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102AF5A21D10CDC000757AB /* UIColorExtension.swift */; };
+		7102AF5C21D15BAC000757AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102AF5A21D10CDC000757AB /* UIColorExtension.swift */; };
+		7102AF5D21D15BAC000757AB /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
+		7102AF5E21D15BAC000757AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
+		7102AF5F21D15BAC000757AB /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */; };
+		7102AF6021D15BAC000757AB /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
+		7102AF6321D15BAF000757AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102AF5A21D10CDC000757AB /* UIColorExtension.swift */; };
+		7102AF6421D15BAF000757AB /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
+		7102AF6521D15BAF000757AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
+		7102AF6621D15BAF000757AB /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */; };
+		7102AF6721D15BAF000757AB /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
+		7102AF6921D15BB5000757AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
+		7102AF6A21D15BB5000757AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141921CDC684003D7933 /* Session.swift */; };
+		7102AF6B21D15BB5000757AB /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3521CEE35000007641 /* Enums.swift */; };
+		7102AF6C21D15BB6000757AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141921CDC684003D7933 /* Session.swift */; };
+		7102AF6E21D15BCF000757AB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 7102AF6D21D15BCF000757AB /* .gitkeep */; };
+		7102AF6F21D15BCF000757AB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 7102AF6D21D15BCF000757AB /* .gitkeep */; };
+		7102AF7021D15BCF000757AB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 7102AF6D21D15BCF000757AB /* .gitkeep */; };
+		7102AF7121D15BD8000757AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C595DA21CA64EB004DB76A /* Assets.xcassets */; };
+		7102AF7221D15BD9000757AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C595DA21CA64EB004DB76A /* Assets.xcassets */; };
+		7102AF7321D15BDD000757AB /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D721CA64EA004DB76A /* Contacts.xcdatamodeld */; };
+		7102AF7421D15BDF000757AB /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D721CA64EA004DB76A /* Contacts.xcdatamodeld */; };
+		7102AF7521D15BE1000757AB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141321CDA17C003D7933 /* CoreDataStack.swift */; };
+		7102AF7621D15BE6000757AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C595DC21CA64EB004DB76A /* LaunchScreen.storyboard */; };
+		7102AF7721D15BE6000757AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C595D421CA64EA004DB76A /* Main.storyboard */; };
+		7102AF7821D15BE7000757AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C595DC21CA64EB004DB76A /* LaunchScreen.storyboard */; };
+		7102AF7921D15BE7000757AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C595D421CA64EA004DB76A /* Main.storyboard */; };
+		7102AF7A21D15BEB000757AB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */; };
+		7102AF7B21D15BEB000757AB /* NewContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */; };
+		7102AF7C21D15BEC000757AB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */; };
+		7102AF7D21D15BEC000757AB /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */; };
+		7102AF7E21D15BEC000757AB /* NewContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */; };
+		7102AF7F21D15BF1000757AB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
+		7102AF8021D15BF4000757AB /* NewContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */; };
 		711BE90221D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
 		711BE90321D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
 		711BE90421D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
@@ -22,7 +55,6 @@
 		71BA141721CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */; };
 		71BA141821CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */; };
 		71BA141A21CDC684003D7933 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141921CDC684003D7933 /* Session.swift */; };
-		71BA141B21CDC684003D7933 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141921CDC684003D7933 /* Session.swift */; };
 		71BA141E21CDCE0F003D7933 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141D21CDCE0F003D7933 /* CustomTextField.swift */; };
 		71BA141F21CDCE0F003D7933 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA141D21CDCE0F003D7933 /* CustomTextField.swift */; };
 		71C595D121CA64EA004DB76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D021CA64EA004DB76A /* AppDelegate.swift */; };
@@ -45,7 +77,6 @@
 		71C5961A21CB234D004DB76A /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961721CB234D004DB76A /* NewContactViewController.swift */; };
 		71C5961B21CB2358004DB76A /* ContactListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5960A21CB20FC004DB76A /* ContactListTableViewController.swift */; };
 		71C5961D21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
-		71C5961E21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
 		71C5961F21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
 		71DEDE3321CEC03000007641 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
 		71DEDE3421CEC03000007641 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
@@ -54,11 +85,8 @@
 		71DEDE5821CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */; };
 		71DEDE5921CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */; };
 		71DEDE5B21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
-		71DEDE5C21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
 		71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
-		71DEDE5F21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
 		71DEDE6321D0211100007641 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
-		71DEDE6421D0211100007641 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
 		961C60C219298F8DE4EC3779 /* Pods_Calendar_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +112,7 @@
 		456514586351327AF47F8E4F /* Pods-Calendar App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App.debug.xcconfig"; sourceTree = "<group>"; };
 		5AC1C097EB78978E232ECFDF /* Pods-Calendar App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App.release.xcconfig"; sourceTree = "<group>"; };
 		7102AF5A21D10CDC000757AB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		7102AF6D21D15BCF000757AB /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		711BE90021D0858100A7F45F /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		711BE90121D0858100A7F45F /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,6 +255,7 @@
 		71C5960121CA6EE5004DB76A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7102AF6D21D15BCF000757AB /* .gitkeep */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,6 +475,7 @@
 			files = (
 				71C595DE21CA64EB004DB76A /* LaunchScreen.storyboard in Resources */,
 				711BE90221D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
+				7102AF6E21D15BCF000757AB /* .gitkeep in Resources */,
 				71C595DB21CA64EB004DB76A /* Assets.xcassets in Resources */,
 				71C595D621CA64EA004DB76A /* Main.storyboard in Resources */,
 			);
@@ -455,6 +486,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				711BE90321D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
+				7102AF7721D15BE6000757AB /* Main.storyboard in Resources */,
+				7102AF7621D15BE6000757AB /* LaunchScreen.storyboard in Resources */,
+				7102AF7121D15BD8000757AB /* Assets.xcassets in Resources */,
+				7102AF6F21D15BCF000757AB /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +498,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				711BE90421D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
+				7102AF7921D15BE7000757AB /* Main.storyboard in Resources */,
+				7102AF7821D15BE7000757AB /* LaunchScreen.storyboard in Resources */,
+				7102AF7221D15BD9000757AB /* Assets.xcassets in Resources */,
+				7102AF7021D15BCF000757AB /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,19 +597,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C5961521CB233F004DB76A /* NewContactViewModel.swift in Sources */,
-				71DEDE6421D0211100007641 /* DateExtension.swift in Sources */,
-				71DEDE5C21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */,
+				7102AF7B21D15BEB000757AB /* NewContactTableViewCell.swift in Sources */,
+				7102AF6521D15BAF000757AB /* DateExtension.swift in Sources */,
 				71C595E921CA64EB004DB76A /* Calendar_AppTests.swift in Sources */,
+				7102AF7A21D15BEB000757AB /* BaseTableViewCell.swift in Sources */,
+				7102AF7F21D15BF1000757AB /* BaseViewController.swift in Sources */,
 				71C5961921CB234D004DB76A /* NewContactViewController.swift in Sources */,
 				71BA141F21CDCE0F003D7933 /* CustomTextField.swift in Sources */,
+				7102AF6B21D15BB5000757AB /* Enums.swift in Sources */,
+				7102AF6921D15BB5000757AB /* Constants.swift in Sources */,
 				71C5961B21CB2358004DB76A /* ContactListTableViewController.swift in Sources */,
+				7102AF7321D15BDD000757AB /* Contacts.xcdatamodeld in Sources */,
 				71BA141821CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
 				71C5961221CB232F004DB76A /* ContactListViewModel.swift in Sources */,
 				71DEDE5921CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */,
-				71C5961E21CB25B1004DB76A /* Constants.swift in Sources */,
+				7102AF6721D15BAF000757AB /* UITextFieldExtension.swift in Sources */,
 				71BA141521CDA17C003D7933 /* CoreDataStack.swift in Sources */,
-				71BA141B21CDC684003D7933 /* Session.swift in Sources */,
-				71DEDE5F21CF07A500007641 /* UIFontExtension.swift in Sources */,
+				7102AF6A21D15BB5000757AB /* Session.swift in Sources */,
+				7102AF6621D15BAF000757AB /* UITableViewCellExtension.swift in Sources */,
+				7102AF6321D15BAF000757AB /* UIColorExtension.swift in Sources */,
+				7102AF6421D15BAF000757AB /* UIFontExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,14 +624,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7102AF6C21D15BB6000757AB /* Session.swift in Sources */,
 				71C5961121CB232B004DB76A /* ContactListViewModel.swift in Sources */,
 				71C5961A21CB234D004DB76A /* NewContactViewController.swift in Sources */,
 				71C5960C21CB20FC004DB76A /* ContactListTableViewController.swift in Sources */,
+				7102AF5F21D15BAC000757AB /* UITableViewCellExtension.swift in Sources */,
+				7102AF7E21D15BEC000757AB /* NewContactTableViewCell.swift in Sources */,
 				71C5961621CB233F004DB76A /* NewContactViewModel.swift in Sources */,
 				71C595F421CA64EB004DB76A /* Calendar_AppUITests.swift in Sources */,
+				7102AF7521D15BE1000757AB /* CoreDataStack.swift in Sources */,
+				7102AF5C21D15BAC000757AB /* UIColorExtension.swift in Sources */,
+				7102AF6021D15BAC000757AB /* UITextFieldExtension.swift in Sources */,
+				7102AF7D21D15BEC000757AB /* ContactListTableViewCell.swift in Sources */,
+				7102AF5E21D15BAC000757AB /* DateExtension.swift in Sources */,
+				7102AF5D21D15BAC000757AB /* UIFontExtension.swift in Sources */,
+				7102AF7C21D15BEC000757AB /* BaseTableViewCell.swift in Sources */,
 				71DEDE3421CEC03000007641 /* BaseViewController.swift in Sources */,
 				71DEDE3721CEE35000007641 /* Enums.swift in Sources */,
 				71C5961F21CB25B1004DB76A /* Constants.swift in Sources */,
+				7102AF8021D15BF4000757AB /* NewContactTableViewCellViewModel.swift in Sources */,
+				7102AF7421D15BDF000757AB /* Contacts.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,16 +9,16 @@
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="addresses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Address" inverseName="contact" inverseEntity="Address" syncable="YES"/>
-        <relationship name="emails" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Email" inverseName="contactEmail" inverseEntity="Email" syncable="YES"/>
-        <relationship name="phones" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Phone" inverseName="contact" inverseEntity="Phone" syncable="YES"/>
+        <relationship name="emails" toMany="YES" deletionRule="Nullify" destinationEntity="Email" inverseName="contactEmail" inverseEntity="Email" syncable="YES"/>
+        <relationship name="phones" toMany="YES" deletionRule="Nullify" destinationEntity="Phone" inverseName="contact" inverseEntity="Phone" syncable="YES"/>
     </entity>
     <entity name="Email" representedClassName="Email" syncable="YES" codeGenerationType="class">
         <attribute name="email" attributeType="String" syncable="YES"/>
-        <relationship name="contactEmail" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="emails" inverseEntity="Contact" syncable="YES"/>
+        <relationship name="contactEmail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="emails" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <entity name="Phone" representedClassName="Phone" syncable="YES" codeGenerationType="class">
         <attribute name="phone" attributeType="String" syncable="YES"/>
-        <relationship name="contact" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="phones" inverseEntity="Contact" syncable="YES"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="phones" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <elements>
         <element name="Address" positionX="-492.37890625" positionY="-14.61328125" width="128" height="75"/>

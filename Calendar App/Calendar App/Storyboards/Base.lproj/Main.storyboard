@@ -65,6 +65,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="Ux0-bu-HVX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="4Z4-4n-r3h">
+                            <connections>
+                                <action selector="didPressBookmarksButton:" destination="yEn-Ku-nuK" id="6xe-Io-r0M"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="D0N-2h-Kgg">
                             <connections>
                                 <action selector="didPressNewContactButton:" destination="yEn-Ku-nuK" id="dS2-wb-jzn"/>

@@ -30,8 +30,8 @@ class ContactListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(contact: Contact?) {
-        guard let contact = contact else {
+    func setup(newContact: Contact?) {
+        guard let contact = newContact else {
             return
         }
         
@@ -43,11 +43,11 @@ class ContactListTableViewCell: UITableViewCell {
         if let lastName = contact.lastName {
             labelText = "\(labelText) \(lastName)".trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        
         if labelText == "" {
-            
             labelText = "No Name"
             titleLabel?.font = UIFont.italicSystemFont(ofSize: titleLabel?.font.pointSize ?? 17)
+        } else {
+            titleLabel?.font = UIFont.systemFont(ofSize: titleLabel?.font.pointSize ?? 17)
         }
         
         titleLabel?.text = labelText
@@ -83,4 +83,5 @@ class ContactListTableViewCell: UITableViewCell {
             
         }
     }
+    
 }

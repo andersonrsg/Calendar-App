@@ -13,10 +13,9 @@ class ContactListTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    lazy var viewModel = ContactListViewModel()
+    fileprivate var viewModel = ContactListViewModel()
     
-    fileprivate var searchController = UISearchController()
-    fileprivate var resultsController = UITableViewController()
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - Outlets
     
@@ -24,7 +23,6 @@ class ContactListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupRefreshControl()
         self.setupSearch()
         self.refreshContactList(self)
         
@@ -48,12 +46,12 @@ class ContactListTableViewController: UITableViewController {
     }
     
     private func setupSearch() {
-        searchController = UISearchController(searchResultsController: resultsController)
-        tableView.tableHeaderView = searchController.searchBar
-        searchController.searchResultsUpdater = self
-        
-        resultsController.tableView.delegate = self
-        resultsController.tableView.dataSource = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search"
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.searchBarStyle = .minimal
+        navigationItem.searchController = searchController
     }
     
     // MARK: - Navigation
@@ -74,6 +72,17 @@ class ContactListTableViewController: UITableViewController {
     }
     
     // MARK: Actions
+    
+    @IBAction func didPressBookmarksButton(_ sender: Any) {
+        searchController.searchBar.showsCancelButton = false
+        viewModel.isSearching = false
+        viewModel.searchResults = nil
+        searchController.searchBar.text = ""
+        viewModel.addBookmarks {
+            let lastRow = self.tableView.numberOfRows(inSection: 0) - 1
+            tableView.reloadData()
+        }
+    }
     
     @objc private func refreshContactList(_ sender: Any) {
         self.viewModel.fetchContacts(success: { [weak self] in
@@ -106,9 +115,9 @@ class ContactListTableViewController: UITableViewController {
         }
         
         if viewModel.isSearching {
-            cell.setup(contact: viewModel.searchResults?[indexPath.row])
+            cell.setup(newContact: viewModel.searchResults?[indexPath.row])
         } else {
-            cell.setup(contact: viewModel.contactList.object(at: indexPath))
+            cell.setup(newContact: viewModel.contactList.object(at: indexPath))
         }
         
         return cell
@@ -118,19 +127,29 @@ class ContactListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let actionDelete = UIContextualAction(style: .destructive,
-                                              title: "Delete") { [weak self] _, _, completion  in
-                                                
-                                                if let contact = self?.viewModel.contactList.object(at: indexPath) {
-                                                    self?.viewModel.contactList.managedObjectContext.delete(contact)
-                                                    do {
-                                                        try self?.viewModel.contactList.managedObjectContext.save()
-                                                    } catch {
-                                                        
-                                                    }
-                                                }
-                                                
-                                                completion(true)
+        let actionDelete = UIContextualAction(
+            style: .destructive,
+            title: "Delete") { [weak self] _, _, completion  in
+                
+                if self?.viewModel.isSearching ?? false {
+                    
+                    if let contact = self?.viewModel.searchResults?[indexPath.row] {
+                        self?.viewModel.contactList.managedObjectContext.delete(contact)
+                        self?.viewModel.saveChanges()
+                    }
+                    
+                    completion(true)
+                    
+                } else {
+                    
+                    if let contact = self?.viewModel.contactList.object(at: indexPath) {
+                        self?.viewModel.contactList.managedObjectContext.delete(contact)
+                        self?.viewModel.saveChanges()
+                    }
+                    
+                    completion(true)
+                }
+                
         }
         
         actionDelete.backgroundColor = .red
@@ -145,7 +164,6 @@ class ContactListTableViewController: UITableViewController {
             self.viewModel.selectedContact = viewModel.searchResults?[indexPath.row]
         } else {
             self.viewModel.selectedContact = viewModel.contactList.object(at: indexPath)
-        
         }
         self.performSegue(withIdentifier: "GoToViewContactView", sender: self)
         
@@ -160,16 +178,33 @@ extension ContactListTableViewController: NewContactViewControllerDelegate {
     }
 }
 
-// MARK: - Results Controller Delegate
-extension ContactListTableViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        if let text = searchController.searchBar.text {
-            if !text.isEmpty {
-                viewModel.searchResults = viewModel.contactList.fetchedObjects?.filter {
-                    $0.firstName?.contains(text) ?? false
-                }
+// MARK: - Search Bar Delegate
+
+extension ContactListTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty {
+            viewModel.filterContacts(text: searchText) { [weak self] in
+                self?.tableView.reloadData()
             }
         }
-        tableView.reloadData()
+        
     }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        viewModel.isSearching = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        viewModel.isSearching = false
+        viewModel.searchResults = nil
+        tableView.reloadData()
+        searchBar.text = ""
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
 }

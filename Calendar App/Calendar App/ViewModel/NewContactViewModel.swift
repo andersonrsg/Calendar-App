@@ -27,6 +27,10 @@ class NewContactViewModel {
         selectedContact = Contact(context: context)
     }
     
+    func discardChanges() {
+        CoreDataStack.shared.discardChanges()
+    }
+    
     func isLastItem(_ indexPath: IndexPath) -> Bool {
         switch indexPath.section {
         case EnumContactDataSection.phone.rawValue:
@@ -38,6 +42,18 @@ class NewContactViewModel {
         default:
             return false
         }
+    }
+    
+    func isValidContact(success:() -> Void, error: (String) -> Void) {
+        
+        if selectedContact?.phones?.allObjects.count == 0 {
+            error("Contact should have at least one phone number. ")
+        } else if selectedContact?.emails?.allObjects.count == 0 {
+            error("Contact should have at least one email. ")
+        } else {
+            success()
+        }
+        
     }
     
     func addRow(for indexPath: IndexPath) {

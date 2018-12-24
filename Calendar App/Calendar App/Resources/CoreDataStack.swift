@@ -62,5 +62,10 @@ class CoreDataStack {
             }
         }
     }
+    
+    func discardChanges() {
+        let context = persistentContainer.viewContext
+        context.reset()
+    }
 
 }
