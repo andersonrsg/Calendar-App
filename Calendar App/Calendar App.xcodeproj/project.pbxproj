@@ -50,6 +50,8 @@
 		71DEDE5C21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
 		71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
 		71DEDE5F21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
+		71DEDE6321D0211100007641 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
+		71DEDE6421D0211100007641 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
 		961C60C219298F8DE4EC3779 /* Pods_Calendar_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,7 @@
 		71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		71DEDE5D21CF07A500007641 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		71DEDE6221D0211100007641 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				71DEDE5D21CF07A500007641 /* UIFontExtension.swift */,
+				71DEDE6221D0211100007641 /* DateExtension.swift */,
 				71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */,
 				71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */,
 			);
@@ -498,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C5960B21CB20FC004DB76A /* ContactListTableViewController.swift in Sources */,
+				71DEDE6321D0211100007641 /* DateExtension.swift in Sources */,
 				71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */,
 				71DEDE5B21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */,
 				71C5961421CB233F004DB76A /* NewContactViewModel.swift in Sources */,
@@ -524,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C5961521CB233F004DB76A /* NewContactViewModel.swift in Sources */,
+				71DEDE6421D0211100007641 /* DateExtension.swift in Sources */,
 				71DEDE5C21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */,
 				71C595E921CA64EB004DB76A /* Calendar_AppTests.swift in Sources */,
 				71C5961921CB234D004DB76A /* NewContactViewController.swift in Sources */,

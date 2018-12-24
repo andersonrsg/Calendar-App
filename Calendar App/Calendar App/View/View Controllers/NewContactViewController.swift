@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 @objc protocol NewContactViewControllerDelegate: class {
-    @objc optional func didFinishAddingContact()
+    @objc func didFinishAddingContact()
 }
 
 class NewContactViewController: BaseViewController {
-
+    
     // MARK: - Properties
-
-//    let sectionHeaderTitles = ["", "Phone", "Email", "Address"]
-
+    
+    //    let sectionHeaderTitles = ["", "Phone", "Email", "Address"]
+    
     weak var delegate: NewContactViewControllerDelegate?
     
     lazy var viewModel = NewContactViewModel()
@@ -28,25 +29,32 @@ class NewContactViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
+    // USed to add focus on the text field after table view reload
+    var selectedRow: IndexPath?
     
-    // Mark -- UI
+    // MARK: - Outlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var completeButton: UIBarButtonItem!
+    
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
-        setupLayout()
         
     }
     
+    // MARK: - UI
     private func setupLayout() {
         switch viewMode {
         case .new:
+            print("CALLED2")
             viewModel.setupNewContact()
         case .edit:
             break
         case .view:
+//            completeButton.title = "Edit"
             break
         }
     }
@@ -58,8 +66,9 @@ class NewContactViewController: BaseViewController {
     //    }
     
     @IBAction func didPressDoneButton(_ sender: Any) {
+        
         viewModel.addContact(success: { 
-            delegate?.didFinishAddingContact?()
+            delegate?.didFinishAddingContact()
         }, failure: { [weak self] in
             self?.showAlert(error: $0)
         })
@@ -68,6 +77,8 @@ class NewContactViewController: BaseViewController {
     }
     
 }
+
+// MARK: - Table View Delegate
 
 extension NewContactViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,14 +89,15 @@ extension NewContactViewController: UITableViewDelegate {
             return NewContactTableViewCell.listInformationSize
         }
     }
-
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return NewContactTableViewCell.separatorSize
     }
 }
 
+// MARK: - Table View Data Source
 extension NewContactViewController: UITableViewDataSource {
-
+    
     //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     //        if section == 1 {
     //            return "Address"
@@ -97,11 +109,11 @@ extension NewContactViewController: UITableViewDataSource {
     //            return ""
     //        }
     //    }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -122,82 +134,112 @@ extension NewContactViewController: UITableViewDataSource {
                                                            for: indexPath) as? NewContactTableViewCell else {
                                                             return UITableViewCell()
             }
-
+            
+            cell.indexPath = indexPath
             cell.delegate = self
-
+            cell.setupMainInformation(defaultValue: self.viewModel.selectedContact)
+            
             return cell
             
         } else {
-
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NewContactTableViewCell.listInformation,
                                                            for: indexPath) as? NewContactTableViewCell else {
                                                             return UITableViewCell()
             }
-
+            
             cell.indexPath = indexPath
             cell.delegate = self
-
+            
             let isLastItem = viewModel.isLastItem(indexPath)
             cell.setupListCell(isLastItem: isLastItem)
-
+            
             if !isLastItem {
                 if viewMode == .edit || viewMode == .view {
                     switch indexPath.section {
                     case EnumContactDataSection.phone.rawValue:
-                        cell.setupDefaultValue(value: (viewModel.selectedContact?.phones?.allObjects[indexPath.row] as? Phone)?.phone ?? "")
+                        cell.setupDefaultValue(value:
+                            (viewModel.selectedContact?.phones?.allObjects[indexPath.row] as? Phone)?.phone ?? "")
+                        
                     case EnumContactDataSection.email.rawValue:
-                        cell.setupDefaultValue(value: (viewModel.selectedContact?.emails?.allObjects[indexPath.row] as? Email)?.email ?? "")
+                        cell.setupDefaultValue(value:
+                            (viewModel.selectedContact?.emails?.allObjects[indexPath.row] as? Email)?.email ?? "")
+                        
                     case EnumContactDataSection.address.rawValue:
-                        cell.setupDefaultValue(value: "asdajads")
+                        cell.setupDefaultValue(value:
+                            (viewModel.selectedContact?.addresses?.allObjects[indexPath.row] as? Address)?.address ?? "")
+                        
                     default:
                         break
                     }
-
+                    
                 }
             }
+            
+            if let _ = selectedRow {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    cell.dataTextField.becomeFirstResponder()
+                    self.selectedRow = nil
+                }
+            }
+            
             return cell
         }
         
     }
-
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 20))
-
+        
         return view
     }
-
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 22))
-//        let label = UILabel(frame: CGRect(x: 16, y: 0, width: 100, height: 22))
-//        view.addSubview(label)
-//
-//        label.text = sectionHeaderTitles[section]
-//        label.font = UIFont.textFieldHeaderFont(ofSize: label.font.pointSize)
-//
-//        return view
-//
-//    }
+    
 }
 
+// MARK: - New Contact view delegate
 extension NewContactViewController: NewContactTableViewDelegate {
     
     func didPressRemoveItem(at indexPath: IndexPath) {
         print("REMOVE: \(indexPath)")
+        
+        self.viewModel.removeItem(for: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        // Fully reloads the table view to avoid weird behavior with the stored data
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.tableView.reloadData()
+        }
+        
     }
-
+    
     func didPressAddItem(at indexPath: IndexPath) {
         print("ADD: \(indexPath)")
-
+        if indexPath.section != 0 {
+            if viewModel.isLastItem(indexPath) {
+                // Adds the new index path adter the selected row
+                let newIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                viewModel.addRow(for: newIndexPath)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+                
+                // Reload Icons
+                tableView.reloadRows(at: [indexPath, newIndexPath], with: .automatic)
+                
+                // Reload selected row again to make it become first responder
+                selectedRow = indexPath
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+                
+            }
+        }
     }
-
-    func didFinishFillingData(data: EnumDataField?, value: Any) {
-        guard let data = data else {
+    
+    func didFinishFillingData(data: EnumDataField?, value: Any?) {
+        guard let data = data, let value = value else {
             return
         }
+        
         print(value)
         print(data)
-
+        
         switch data {
         case .firstName:
             if let value = value as? String {
@@ -208,9 +250,14 @@ extension NewContactViewController: NewContactTableViewDelegate {
                 self.viewModel.selectedContact?.lastName = value
             }
         case .birthday:
-            break
+            if let value = value as? Date {
+                self.viewModel.selectedContact?.dateOfBirth = value
+            }
         case .address(let index):
-            break
+            if let value = value as? String,
+                let addresses = self.viewModel.selectedContact?.addresses?.allObjects as? [Address] {
+                addresses[index].address = value
+            }
         case .phone(let index):
             if let value = value as? String,
                 let phones = self.viewModel.selectedContact?.phones?.allObjects as? [Phone] {

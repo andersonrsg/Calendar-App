@@ -10,69 +10,84 @@ import UIKit
 import CoreData
 
 class NewContactViewModel {
-
+    
     // MARK: - Properties
-
+    
     private var context: NSManagedObjectContext!
-
+    
     var selectedContact: Contact?
     
-    // MARK: -
-
+    // MARK: - Public Functions
+    
+    init() {
+        self.context = CoreDataStack.shared.persistentContainer.viewContext
+    }
+    
     func setupNewContact() {
+        print("CALLED")
         selectedContact = Contact(context: context)
-        selectedContact?.addToAddresses(Address(context: context))
-        selectedContact?.addToEmails(Email(context: context))
-        selectedContact?.addToPhones(Phone(context: context))
     }
-
-    func validateData() {
-
-    }
-
-    func addAddress(address: String) {
-
-    }
-
-    func addEmail() {
-
-    }
-
+    
     func isLastItem(_ indexPath: IndexPath) -> Bool {
         switch indexPath.section {
-        case 1:
+        case EnumContactDataSection.phone.rawValue:
             return indexPath.row >= selectedContact?.phones?.count ?? 0
-        case 2:
+        case EnumContactDataSection.email.rawValue:
             return indexPath.row >= selectedContact?.emails?.count ?? 0
-        case 3:
+        case EnumContactDataSection.address.rawValue:
             return indexPath.row >= selectedContact?.addresses?.count ?? 0
         default:
             return false
         }
     }
-
+    
+    func addRow(for indexPath: IndexPath) {
+        switch indexPath.section {
+        case EnumContactDataSection.phone.rawValue:
+            let phone = Phone(context: context)
+            phone.phone = ""
+            selectedContact?.addToPhones(phone)
+        case EnumContactDataSection.email.rawValue:
+            let email = Email(context: context)
+            email.email = ""
+            selectedContact?.addToEmails(email)
+        case EnumContactDataSection.address.rawValue:
+            selectedContact?.addToAddresses(Address(context: context))
+        default:
+            break
+        }
+    }
+    
+    func removeItem(for indexPath: IndexPath) {
+        switch indexPath.section {
+        case EnumContactDataSection.phone.rawValue:
+            
+            if var phones = selectedContact?.phones?.allObjects as? [Phone] {
+                selectedContact?.removeFromPhones(phones[indexPath.row])
+            }
+            
+        case EnumContactDataSection.email.rawValue:
+            if var emails = selectedContact?.emails?.allObjects as? [Email] {
+                selectedContact?.removeFromEmails(emails[indexPath.row])
+            }
+            
+        case EnumContactDataSection.address.rawValue:
+            if var addresses = selectedContact?.addresses?.allObjects as? [Address] {
+                selectedContact?.removeFromAddresses(addresses[indexPath.row])
+            }
+            
+        default:
+            break
+        }
+    }
+    
     func addContact(success: () -> Void, failure: (String) -> Void) {
-
-        let contact = Contact(context: context)
-        contact.firstName = "teste silva"
-        let email = Email(context: context)
-        email.email = "teste.teste"
-        
-        let phone = Phone(context: context)
-        phone.phone = "tedsasjd"
-//
-        contact.addToEmails(email)
-        contact.addToPhones(phone)
         
         saveChanges(success: success, failure: failure)
     }
-
-    func updateContact(contact: Contact, success: () -> Void, failure: (String) -> Void) {
-
-
-        saveChanges(success: success, failure: failure)
-    }
-
+    
+    // MARK: - Private functions
+    
     private func saveChanges(success: () -> Void, failure: (String) -> Void) {
         do {
             try context.save()
@@ -84,8 +99,4 @@ class NewContactViewModel {
         }
     }
 
-
-    init() {
-        self.context = CoreDataStack.shared.persistentContainer.viewContext
-    }
 }

@@ -11,6 +11,9 @@ import UIKit
 class NewContactTableViewCellViewModel: NSObject {
 
     var placeHolderList = ["", "Phone", "Email", "Address"]
+    var keyboardTypeList: [UIKeyboardType] = [.asciiCapable, .phonePad, .emailAddress, .asciiCapable]
+    var keyboardContentTypeList: [UITextContentType] = [.name, .telephoneNumber, .emailAddress, .fullStreetAddress]
+    
     var iconAdd: UIImage = #imageLiteral(resourceName: "plus")
     var iconRemove: UIImage = #imageLiteral(resourceName: "cancel")
 }

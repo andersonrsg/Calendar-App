@@ -63,11 +63,11 @@
             <objects>
                 <viewController id="TmA-uJ-0B9" customClass="NewContactViewController" customModule="Calendar_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DGS-1e-1q6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rQa-xI-gb1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="U8n-DN-hEV" userLabel="footer">
                                     <rect key="frame" x="0.0" y="248" width="375" height="80"/>
@@ -83,7 +83,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-pa-hfE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TmJ-Ic-Wqd" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="16" width="343" height="36"/>
@@ -92,9 +92,9 @@
                                                             </constraints>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="given-name"/>
                                                         </textField>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-IO-47m" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-IO-47m" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="60" width="343" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="HNM-m9-oMM"/>
@@ -102,9 +102,9 @@
                                                             </constraints>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
                                                         </textField>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILO-5G-vGx" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILO-5G-vGx" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="104" width="343" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Knk-PK-sVd"/>
@@ -150,7 +150,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1l-Ru-OkE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-mq-iMc" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="16" width="343" height="36"/>
@@ -160,6 +160,9 @@
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="defaultPadding" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,14 +197,14 @@
                         <viewLayoutGuide key="safeArea" id="Vlw-Jv-ODm"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Contact" id="Z5E-2W-L4Q">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="vL4-Sd-7BM">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="vL4-Sd-7BM">
                             <connections>
                                 <action selector="didPressDoneButton:" destination="TmA-uJ-0B9" id="clD-sP-Ieb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="completeButton" destination="vL4-Sd-7BM" id="YKz-cE-MbN"/>
                         <outlet property="tableView" destination="rQa-xI-gb1" id="V2G-NN-hEd"/>
                     </connections>
                 </viewController>
@@ -229,6 +232,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PB6-sv-bfA"/>
+        <segue reference="HAv-Ng-2a1"/>
     </inferredMetricsTieBreakers>
 </document>

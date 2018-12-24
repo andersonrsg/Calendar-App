@@ -63,10 +63,17 @@ import UIKit
             setup()
         }
     }
+    
+    @IBInspectable var defaultPadding: Bool = true {
+        didSet {
+            if !defaultPadding {
+                padding = customPadding
+            }
+        }
+    }
 
-    private var padding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 5)
-
-//    private let padding2 = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 5)
+    private var padding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 5)
+    private var customPadding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 5)
 
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
