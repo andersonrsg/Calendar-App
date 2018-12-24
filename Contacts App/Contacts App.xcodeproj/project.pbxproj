@@ -47,6 +47,8 @@
 		711BE90521D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
 		711BE90621D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
 		711BE90721D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
+		715EBF4421D19B07001E60C6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71C595F521CA64EB004DB76A /* Info.plist */; };
+		715EBF4521D19B0B001E60C6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71C595EA21CA64EB004DB76A /* Info.plist */; };
 		71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */; };
 		71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */; };
 		71A35DBA21CD462E000BE53F /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */; };
@@ -87,7 +89,7 @@
 		71DEDE5B21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */; };
 		71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5D21CF07A500007641 /* UIFontExtension.swift */; };
 		71DEDE6321D0211100007641 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE6221D0211100007641 /* DateExtension.swift */; };
-		961C60C219298F8DE4EC3779 /* Pods_Calendar_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */; };
+		DCEE3B5FEEB59B1E42AE4269 /* Pods_Contacts_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C9002A3CD01E7D62ECA520 /* Pods_Contacts_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,9 +110,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		456514586351327AF47F8E4F /* Pods-Calendar App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App.debug.xcconfig"; sourceTree = "<group>"; };
-		5AC1C097EB78978E232ECFDF /* Pods-Calendar App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App.release.xcconfig"; sourceTree = "<group>"; };
+		19732C1690AF8ABE88D247D3 /* Pods-Contacts App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App.debug.xcconfig"; sourceTree = "<group>"; };
 		7102AF5A21D10CDC000757AB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		7102AF6D21D15BCF000757AB /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		711BE90021D0858100A7F45F /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
@@ -122,17 +122,17 @@
 		71BA141621CDA6B5003D7933 /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewCell.swift; sourceTree = "<group>"; };
 		71BA141921CDC684003D7933 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		71BA141D21CDCE0F003D7933 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		71C595CD21CA64EA004DB76A /* Calendar App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C595CD21CA64EA004DB76A /* Contacts App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contacts App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C595D021CA64EA004DB76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C595D521CA64EA004DB76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71C595D821CA64EA004DB76A /* Calendar_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calendar_App.xcdatamodel; sourceTree = "<group>"; };
 		71C595DA21CA64EB004DB76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71C595DD21CA64EB004DB76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71C595DF21CA64EB004DB76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71C595E421CA64EB004DB76A /* Calendar AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Calendar AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C595E421CA64EB004DB76A /* Contacts AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Contacts AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C595E821CA64EB004DB76A /* Calendar_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_AppTests.swift; sourceTree = "<group>"; };
 		71C595EA21CA64EB004DB76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71C595EF21CA64EB004DB76A /* Calendar AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Calendar AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C595EF21CA64EB004DB76A /* Contacts AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Contacts AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C595F321CA64EB004DB76A /* Calendar_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_AppUITests.swift; sourceTree = "<group>"; };
 		71C595F521CA64EB004DB76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C5960A21CB20FC004DB76A /* ContactListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTableViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +146,8 @@
 		71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		71DEDE5D21CF07A500007641 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		71DEDE6221D0211100007641 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		82C9002A3CD01E7D62ECA520 /* Pods_Contacts_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contacts_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD607A566845C186BD32A968 /* Pods-Contacts App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				711BE90521D0858100A7F45F /* HockeySDK.framework in Frameworks */,
-				961C60C219298F8DE4EC3779 /* Pods_Calendar_App.framework in Frameworks */,
+				DCEE3B5FEEB59B1E42AE4269 /* Pods_Contacts_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				711BE8FF21D0858100A7F45F /* HockeySDK.embeddedframework */,
-				03B9B053F97A753E8DE99C47 /* Pods_Calendar_App.framework */,
+				82C9002A3CD01E7D62ECA520 /* Pods_Contacts_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,9 +201,9 @@
 		71C595C421CA64EA004DB76A = {
 			isa = PBXGroup;
 			children = (
-				71C595CF21CA64EA004DB76A /* Calendar App */,
-				71C595E721CA64EB004DB76A /* Calendar AppTests */,
-				71C595F221CA64EB004DB76A /* Calendar AppUITests */,
+				71C595CF21CA64EA004DB76A /* Contacts App */,
+				71C595E721CA64EB004DB76A /* Contacts AppTests */,
+				71C595F221CA64EB004DB76A /* Contacts AppUITests */,
 				71C595CE21CA64EA004DB76A /* Products */,
 				8D1960C1597A8C88BD35A369 /* Pods */,
 				1F60FA90D27C65E01D7FD44F /* Frameworks */,
@@ -211,14 +213,14 @@
 		71C595CE21CA64EA004DB76A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71C595CD21CA64EA004DB76A /* Calendar App.app */,
-				71C595E421CA64EB004DB76A /* Calendar AppTests.xctest */,
-				71C595EF21CA64EB004DB76A /* Calendar AppUITests.xctest */,
+				71C595CD21CA64EA004DB76A /* Contacts App.app */,
+				71C595E421CA64EB004DB76A /* Contacts AppTests.xctest */,
+				71C595EF21CA64EB004DB76A /* Contacts AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		71C595CF21CA64EA004DB76A /* Calendar App */ = {
+		71C595CF21CA64EA004DB76A /* Contacts App */ = {
 			isa = PBXGroup;
 			children = (
 				71C5960721CA6F35004DB76A /* Application */,
@@ -231,25 +233,25 @@
 				71C5960821CA6F64004DB76A /* View */,
 				71C5960921CA6F6E004DB76A /* ViewModel */,
 			);
-			path = "Calendar App";
+			path = "Contacts App";
 			sourceTree = "<group>";
 		};
-		71C595E721CA64EB004DB76A /* Calendar AppTests */ = {
+		71C595E721CA64EB004DB76A /* Contacts AppTests */ = {
 			isa = PBXGroup;
 			children = (
 				71C595E821CA64EB004DB76A /* Calendar_AppTests.swift */,
 				71C595EA21CA64EB004DB76A /* Info.plist */,
 			);
-			path = "Calendar AppTests";
+			path = "Contacts AppTests";
 			sourceTree = "<group>";
 		};
-		71C595F221CA64EB004DB76A /* Calendar AppUITests */ = {
+		71C595F221CA64EB004DB76A /* Contacts AppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				71C595F321CA64EB004DB76A /* Calendar_AppUITests.swift */,
 				71C595F521CA64EB004DB76A /* Info.plist */,
 			);
-			path = "Calendar AppUITests";
+			path = "Contacts AppUITests";
 			sourceTree = "<group>";
 		};
 		71C5960121CA6EE5004DB76A /* Models */ = {
@@ -360,8 +362,8 @@
 		8D1960C1597A8C88BD35A369 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				456514586351327AF47F8E4F /* Pods-Calendar App.debug.xcconfig */,
-				5AC1C097EB78978E232ECFDF /* Pods-Calendar App.release.xcconfig */,
+				19732C1690AF8ABE88D247D3 /* Pods-Contacts App.debug.xcconfig */,
+				DD607A566845C186BD32A968 /* Pods-Contacts App.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -369,9 +371,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71C595CC21CA64EA004DB76A /* Calendar App */ = {
+		71C595CC21CA64EA004DB76A /* Contacts App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71C595F821CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Calendar App" */;
+			buildConfigurationList = 71C595F821CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Contacts App" */;
 			buildPhases = (
 				416A7172006B13A0A7B23982 /* [CP] Check Pods Manifest.lock */,
 				71C595C921CA64EA004DB76A /* Sources */,
@@ -384,14 +386,14 @@
 			);
 			dependencies = (
 			);
-			name = "Calendar App";
+			name = "Contacts App";
 			productName = "Calendar App";
-			productReference = 71C595CD21CA64EA004DB76A /* Calendar App.app */;
+			productReference = 71C595CD21CA64EA004DB76A /* Contacts App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		71C595E321CA64EB004DB76A /* Calendar AppTests */ = {
+		71C595E321CA64EB004DB76A /* Contacts AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71C595FB21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Calendar AppTests" */;
+			buildConfigurationList = 71C595FB21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Contacts AppTests" */;
 			buildPhases = (
 				71C595E021CA64EB004DB76A /* Sources */,
 				71C595E121CA64EB004DB76A /* Frameworks */,
@@ -402,14 +404,14 @@
 			dependencies = (
 				71C595E621CA64EB004DB76A /* PBXTargetDependency */,
 			);
-			name = "Calendar AppTests";
+			name = "Contacts AppTests";
 			productName = "Calendar AppTests";
-			productReference = 71C595E421CA64EB004DB76A /* Calendar AppTests.xctest */;
+			productReference = 71C595E421CA64EB004DB76A /* Contacts AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		71C595EE21CA64EB004DB76A /* Calendar AppUITests */ = {
+		71C595EE21CA64EB004DB76A /* Contacts AppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71C595FE21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Calendar AppUITests" */;
+			buildConfigurationList = 71C595FE21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Contacts AppUITests" */;
 			buildPhases = (
 				71C595EB21CA64EB004DB76A /* Sources */,
 				71C595EC21CA64EB004DB76A /* Frameworks */,
@@ -420,9 +422,9 @@
 			dependencies = (
 				71C595F121CA64EB004DB76A /* PBXTargetDependency */,
 			);
-			name = "Calendar AppUITests";
+			name = "Contacts AppUITests";
 			productName = "Calendar AppUITests";
-			productReference = 71C595EF21CA64EB004DB76A /* Calendar AppUITests.xctest */;
+			productReference = 71C595EF21CA64EB004DB76A /* Contacts AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -448,7 +450,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 71C595C821CA64EA004DB76A /* Build configuration list for PBXProject "Calendar App" */;
+			buildConfigurationList = 71C595C821CA64EA004DB76A /* Build configuration list for PBXProject "Contacts App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -461,9 +463,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71C595CC21CA64EA004DB76A /* Calendar App */,
-				71C595E321CA64EB004DB76A /* Calendar AppTests */,
-				71C595EE21CA64EB004DB76A /* Calendar AppUITests */,
+				71C595CC21CA64EA004DB76A /* Contacts App */,
+				71C595E321CA64EB004DB76A /* Contacts AppTests */,
+				71C595EE21CA64EB004DB76A /* Contacts AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -487,6 +489,7 @@
 			files = (
 				711BE90321D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
 				7102AF7721D15BE6000757AB /* Main.storyboard in Resources */,
+				715EBF4521D19B0B001E60C6 /* Info.plist in Resources */,
 				7102AF7621D15BE6000757AB /* LaunchScreen.storyboard in Resources */,
 				7102AF7121D15BD8000757AB /* Assets.xcassets in Resources */,
 				7102AF6F21D15BCF000757AB /* .gitkeep in Resources */,
@@ -499,6 +502,7 @@
 			files = (
 				711BE90421D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
 				7102AF7921D15BE7000757AB /* Main.storyboard in Resources */,
+				715EBF4421D19B07001E60C6 /* Info.plist in Resources */,
 				7102AF7821D15BE7000757AB /* LaunchScreen.storyboard in Resources */,
 				7102AF7221D15BD9000757AB /* Assets.xcassets in Resources */,
 				7102AF7021D15BCF000757AB /* .gitkeep in Resources */,
@@ -514,7 +518,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -523,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Calendar App/Pods-Calendar App-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		416A7172006B13A0A7B23982 /* [CP] Check Pods Manifest.lock */ = {
@@ -537,7 +541,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Calendar App-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Contacts App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -549,11 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -652,12 +652,12 @@
 /* Begin PBXTargetDependency section */
 		71C595E621CA64EB004DB76A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 71C595CC21CA64EA004DB76A /* Calendar App */;
+			target = 71C595CC21CA64EA004DB76A /* Contacts App */;
 			targetProxy = 71C595E521CA64EB004DB76A /* PBXContainerItemProxy */;
 		};
 		71C595F121CA64EB004DB76A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 71C595CC21CA64EA004DB76A /* Calendar App */;
+			target = 71C595CC21CA64EA004DB76A /* Contacts App */;
 			targetProxy = 71C595F021CA64EB004DB76A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -800,24 +800,24 @@
 		};
 		71C595F921CA64EB004DB76A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 456514586351327AF47F8E4F /* Pods-Calendar App.debug.xcconfig */;
+			baseConfigurationReference = 19732C1690AF8ABE88D247D3 /* Pods-Contacts App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4764BD9395;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
-				INFOPLIST_FILE = "Calendar App/Application/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Contacts App/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndersonGralha.ContactApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Adhoc Contact App";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev Contacts App";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -825,7 +825,7 @@
 		};
 		71C595FA21CA64EB004DB76A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AC1C097EB78978E232ECFDF /* Pods-Calendar App.release.xcconfig */;
+			baseConfigurationReference = DD607A566845C186BD32A968 /* Pods-Contacts App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -835,14 +835,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/HockeyAppSdk/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
-				INFOPLIST_FILE = "Calendar App/Application/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Contacts App/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndersonGralha.ContactApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Adhoc Contact App";
+				PROVISIONING_PROFILE_SPECIFIER = "Dist Contact App";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -869,7 +869,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calendar App.app/Calendar App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contacts App.app/Contacts App";
 			};
 			name = Debug;
 		};
@@ -894,7 +894,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calendar App.app/Calendar App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contacts App.app/Contacts App";
 			};
 			name = Release;
 		};
@@ -949,7 +949,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		71C595C821CA64EA004DB76A /* Build configuration list for PBXProject "Calendar App" */ = {
+		71C595C821CA64EA004DB76A /* Build configuration list for PBXProject "Contacts App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71C595F621CA64EB004DB76A /* Debug */,
@@ -958,7 +958,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71C595F821CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Calendar App" */ = {
+		71C595F821CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Contacts App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71C595F921CA64EB004DB76A /* Debug */,
@@ -967,7 +967,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71C595FB21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Calendar AppTests" */ = {
+		71C595FB21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Contacts AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71C595FC21CA64EB004DB76A /* Debug */,
@@ -976,7 +976,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71C595FE21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Calendar AppUITests" */ = {
+		71C595FE21CA64EB004DB76A /* Build configuration list for PBXNativeTarget "Contacts AppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71C595FF21CA64EB004DB76A /* Debug */,
