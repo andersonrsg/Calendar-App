@@ -1,6 +1,6 @@
 //
 //  ContactListViewModel.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 19/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -21,18 +21,23 @@ class ContactListViewModel: NSObject {
     var selectedContact: Contact?
     
     // MARK: - Init
-    
     override init() {
         
     }
     
     // MARK: - Actions
-    
     func addBookmarks(success: () -> Void) {
+        // Remove all contacts and add a dummy one
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
         let deleteRequet = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
-            try CoreDataStack.shared.persistentContainer.persistentStoreCoordinator.execute(deleteRequet, with: CoreDataStack.shared.persistentContainer.viewContext)
+            
+            try CoreDataStack.shared.persistentContainer.persistentStoreCoordinator.execute(
+                deleteRequet,
+                with: CoreDataStack.shared.persistentContainer.viewContext
+            )
+            
         } catch {
             print(error)
         }
@@ -57,6 +62,7 @@ class ContactListViewModel: NSObject {
         }
     }
     
+    // MARK: - Public Functions
     func fetchContacts(success: () -> Void) {
         let request: NSFetchRequest<Contact> = Contact.fetchRequest()
         

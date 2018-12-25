@@ -1,6 +1,6 @@
 //
 //  ContactListTableViewController.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 19/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -39,7 +39,6 @@ class ContactListTableViewController: UITableViewController {
     }
     
     // MARK: - UI
-    
     private func setupRefreshControl() {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refreshContactList(_:)), for: .valueChanged)
@@ -72,7 +71,6 @@ class ContactListTableViewController: UITableViewController {
     }
     
     // MARK: Actions
-    
     @IBAction func didPressBookmarksButton(_ sender: Any) {
         searchController.searchBar.showsCancelButton = false
         viewModel.isSearching = false
@@ -84,6 +82,11 @@ class ContactListTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func didPressNewContactButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "GoToNewContactView", sender: self)
+    }
+    
+    // MARK: - Private Functions
     @objc private func refreshContactList(_ sender: Any) {
         self.viewModel.fetchContacts(success: { [weak self] in
             self?.tableView.reloadData()
@@ -91,11 +94,7 @@ class ContactListTableViewController: UITableViewController {
         })
     }
     
-    @IBAction func didPressNewContactButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "GoToNewContactView", sender: self)
-    }
-    
-    // MARK: - Table view data source
+    // MARK: - Tableview Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -123,7 +122,7 @@ class ContactListTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: - Tableview delegate
     override func tableView(_ tableView: UITableView,
                             trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
@@ -179,7 +178,6 @@ extension ContactListTableViewController: NewContactViewControllerDelegate {
 }
 
 // MARK: - Search Bar Delegate
-
 extension ContactListTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
@@ -187,7 +185,6 @@ extension ContactListTableViewController: UISearchBarDelegate {
                 self?.tableView.reloadData()
             }
         }
-        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

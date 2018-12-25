@@ -1,6 +1,6 @@
 //
 //  CustomTextField.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 20/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -10,19 +10,17 @@ import UIKit
 
 @IBDesignable class CustomTextField: UITextField {
 
-    let animationDuration = 0.3
-    var underline = UIView()
+    // MARK: - Properties
+    private let animationDuration = 0.3
+    
+    private var underline = UIView()
 
-    let errorColor: UIColor = UIColor(displayP3Red: 255/255, green: 7/255, blue: 24/255, alpha: 0.8)
-    let defaultColor: UIColor = UIColor(displayP3Red: 33/255, green: 33/255, blue: 33/255, alpha: 0.3)
+    private let errorColor: UIColor = UIColor(displayP3Red: 255/255, green: 7/255, blue: 24/255, alpha: 0.8)
+    private let defaultColor: UIColor = UIColor(displayP3Red: 33/255, green: 33/255, blue: 33/255, alpha: 0.3)
 
-    var textFont =  UIFont.textFieldFont(ofSize: 14)
+    private var textFont =  UIFont.textFieldFont(ofSize: 14)
 
     private var hasError = false
-
-    var activityIndicatorView: UIActivityIndicatorView?
-
-    // MARK: - Properties
 
     @IBInspectable var hintYPadding: CGFloat = 0.0
 
@@ -120,36 +118,7 @@ import UIKit
         return bounds.inset(by: padding)
     }
 
-//    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-//        var rect = super.clearButtonRect(forBounds: bounds)
-//        if let txt = text, !txt.isEmpty {
-//            var top = ceil(title.font.lineHeight + hintYPadding)
-//            top = min(top, maxTopInset())
-//            rect = CGRect(x: rect.origin.x,
-//                          y: rect.origin.y + (top * 0.5),
-//                          width: rect.size.width,
-//                          height: rect.size.height)
-//        }
-//        return rect.integral
-//    }
-
     // MARK: - Public Methods
-
-    func showActivityIndicatorView() {
-        if activityIndicatorView == nil {
-            self.activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            self.activityIndicatorView?.startAnimating()
-            self.activityIndicatorView?.style = .gray
-        }
-        self.rightViewMode = .always
-        self.rightView = self.activityIndicatorView
-    }
-
-    func dismissActivityIndicatorView() {
-        self.rightViewMode = .never
-        self.rightView = nil
-    }
-
     func setError() {
         UIView.animate(withDuration: 0.3,
                        delay: 0,

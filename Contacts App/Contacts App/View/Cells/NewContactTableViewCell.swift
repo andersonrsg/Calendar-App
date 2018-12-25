@@ -1,6 +1,6 @@
 //
 //  NewContactTableViewCell.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 20/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -71,14 +71,13 @@ class NewContactTableViewCell: BaseTableViewCell {
     var currentDataField: EnumDataField!
     
     // MARK: - Outlets
-    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var birthDayTextField: UITextField!
     
     @IBOutlet weak var dataTextField: UITextField!
     
-    // MARK: -
+    // MARK: - View Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -91,6 +90,7 @@ class NewContactTableViewCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Public Functions
     func setupMainInformation(defaultValue: Contact?) {
         super.setup()
         
@@ -107,22 +107,6 @@ class NewContactTableViewCell: BaseTableViewCell {
         birthDayTextField.delegate = self
         
         setupPicker()
-    }
-    
-    // MARK: - UI
-    private func setupPicker() {
-        birthdayPickerView = UIDatePicker()
-        birthdayPickerView?.datePickerMode = .date
-        birthDayTextField.inputView = birthdayPickerView
-        birthdayPickerView?.addTarget(self,
-                                      action: #selector(pickerDateDidChange),
-                                      for: .valueChanged)
-        
-    }
-    
-    // MARK: - Actions
-    @objc fileprivate func pickerDateDidChange(sender: UIDatePicker?) {
-        birthDayTextField.text = sender?.date.formatDateUS()
     }
     
     func setupDefaultValue(value: String) {
@@ -244,8 +228,26 @@ class NewContactTableViewCell: BaseTableViewCell {
         }
         delegate?.didPressAddItem(at: indexPath)
     }
+    
+    // MARK: - UI
+    private func setupPicker() {
+        birthdayPickerView = UIDatePicker()
+        birthdayPickerView?.datePickerMode = .date
+        birthDayTextField.inputView = birthdayPickerView
+        birthdayPickerView?.addTarget(self,
+                                      action: #selector(pickerDateDidChange),
+                                      for: .valueChanged)
+        
+    }
+    
+    // MARK: - Actions
+    @objc fileprivate func pickerDateDidChange(sender: UIDatePicker?) {
+        birthDayTextField.text = sender?.date.formatDateUS()
+    }
+    
 }
 
+// MARK: - Text Field Delegate
 extension NewContactTableViewCell: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {

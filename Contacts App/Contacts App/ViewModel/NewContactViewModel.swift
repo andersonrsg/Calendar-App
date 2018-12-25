@@ -1,6 +1,6 @@
 //
 //  NewContactViewModel.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 19/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -12,17 +12,16 @@ import CoreData
 class NewContactViewModel {
     
     // MARK: - Properties
-    
     private var context: NSManagedObjectContext!
     
     var selectedContact: Contact?
     
-    // MARK: - Public Functions
-    
+    // MARK: - Init
     init() {
         self.context = CoreDataStack.shared.persistentContainer.viewContext
     }
     
+    // MARK: - Public Functions
     func setupNewContact() {
         selectedContact = Contact(context: context)
     }
@@ -96,13 +95,12 @@ class NewContactViewModel {
         }
     }
     
-    func addContact(success: () -> Void, failure: (String) -> Void) {
-        
+    func addContact(success: () -> Void, failure: (String) -> Void) {    
         saveChanges(success: success, failure: failure)
     }
     
-    // MARK: - Private functions
     
+    // MARK: - Private functions
     private func saveChanges(success: () -> Void, failure: (String) -> Void) {
         do {
             try context.save()

@@ -1,6 +1,6 @@
 //
 //  Enums.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 22/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -14,7 +14,6 @@ enum EnumDataField {
     case address(index: Int)
     case phone(index: Int)
     case email(index: Int)
-    
     
 }
 

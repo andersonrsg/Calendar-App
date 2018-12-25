@@ -1,6 +1,6 @@
 //
 //  Session.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 21/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.

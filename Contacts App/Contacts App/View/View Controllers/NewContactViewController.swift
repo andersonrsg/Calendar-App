@@ -1,6 +1,6 @@
 //
 //  NewContactViewController.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 19/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// MARK: - View Protocol
 @objc protocol NewContactViewControllerDelegate: class {
     @objc func didFinishAddingContact()
 }
@@ -16,9 +17,6 @@ import CoreData
 class NewContactViewController: BaseViewController {
     
     // MARK: - Properties
-    
-    //    let sectionHeaderTitles = ["", "Phone", "Email", "Address"]
-    
     weak var delegate: NewContactViewControllerDelegate?
     
     lazy var viewModel = NewContactViewModel()
@@ -29,17 +27,16 @@ class NewContactViewController: BaseViewController {
         }
     }
     
-    // USed to add focus on the text field after table view reload
+    // Used to add focus on the text field after table view reload
     fileprivate var selectedRow: IndexPath?
     // Used to show actions options on the cell such as call or send email.
     fileprivate var showActionOption: Bool = false
     
     // MARK: - Outlets
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var completeButton: UIBarButtonItem!
     
-    // MARK: - View life cycle
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -62,13 +59,18 @@ class NewContactViewController: BaseViewController {
         }
     }
     
+    // MARK: - Private Functions
     private func setupBackButton() {
         self.navigationItem.hidesBackButton = true
-        let backButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didPressBackButton))
+        let backButton = UIBarButtonItem(title: "Cancel",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(didPressBackButton))
+        
         self.navigationItem.leftBarButtonItem = backButton
     }
     
-    // Mark -- Actions
+    // MARK: - Actions
     @objc func didPressBackButton(_ sender: Any) {
         if viewMode == .new {
             self.viewModel.discardChanges()
@@ -95,11 +97,9 @@ class NewContactViewController: BaseViewController {
         })
         
     }
-    
 }
 
 // MARK: - Table View Delegate
-
 extension NewContactViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -118,28 +118,16 @@ extension NewContactViewController: UITableViewDelegate {
 // MARK: - Table View Data Source
 extension NewContactViewController: UITableViewDataSource {
     
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        if section == 1 {
-    //            return "Address"
-    //        } else if section == 2 {
-    //            return "Phone"
-    //        } else if section == 3 {
-    //            return "Email"
-    //        } else {
-    //            return ""
-    //        }
-    //    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == EnumContactDataSection.primary.rawValue {
             return 1
-        } else if section == 1 {
+        } else if section == EnumContactDataSection.phone.rawValue {
             return (viewModel.selectedContact?.phones?.count ?? 0) + 1
-        } else if section == 2 {
+        } else if section == EnumContactDataSection.email.rawValue {
             return (viewModel.selectedContact?.emails?.count ?? 0) + 1
         } else {
             return (viewModel.selectedContact?.addresses?.count ?? 0) + 1
@@ -210,14 +198,14 @@ extension NewContactViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 20))
         
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 20))
         return view
     }
     
 }
 
-// MARK: - New Contact view delegate
+// MARK: - New Contact View Delegate
 extension NewContactViewController: NewContactTableViewDelegate {
     
     func didPressRemoveItem(at indexPath: IndexPath) {
@@ -235,6 +223,7 @@ extension NewContactViewController: NewContactTableViewDelegate {
     
     func didPressAddItem(at indexPath: IndexPath) {
         print("ADD: \(indexPath)")
+        
         if indexPath.section != 0 {
             if viewModel.isLastItem(indexPath) {
                 // Adds the new index path adter the selected row
@@ -257,9 +246,6 @@ extension NewContactViewController: NewContactTableViewDelegate {
         guard let data = data, let value = value else {
             return
         }
-        
-        print(value)
-        print(data)
         
         switch data {
         case .firstName:

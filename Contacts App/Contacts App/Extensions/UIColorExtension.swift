@@ -1,6 +1,6 @@
 //
 //  UIColorExtension.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 21/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -10,6 +10,7 @@ import UIKit
 
 extension UIColor {
     
+    // MARK: - Image Colors
     struct ImageTintColors {
         
         static var phoneColor: UIColor {
@@ -25,6 +26,7 @@ extension UIColor {
         }
     }
     
+    // MARK: - Init
     convenience init(hex: String?) {
         if hex != nil {
             var cString = hex!.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

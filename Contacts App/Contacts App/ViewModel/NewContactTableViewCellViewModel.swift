@@ -1,6 +1,6 @@
 //
 //  NewContactTableViewCellViewModel.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 22/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -11,7 +11,6 @@ import UIKit
 class NewContactTableViewCellViewModel: NSObject {
 
     // MARK: - Properties
-    
     // First Item is a dummy item
     var placeHolderList = ["", "Phone", "Email", "Address"]
     var keyboardTypeList: [UIKeyboardType] = [.asciiCapable, .phonePad, .emailAddress, .asciiCapable]
@@ -23,8 +22,4 @@ class NewContactTableViewCellViewModel: NSObject {
     var iconAdd: UIImage = #imageLiteral(resourceName: "plus")
     var iconRemove: UIImage = #imageLiteral(resourceName: "cancel")
     
-    // MARK: - Functions
-    func addAction(for textField: UITextField, and index: Int) {
-        textField
-    }
 }

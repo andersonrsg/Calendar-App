@@ -13,13 +13,13 @@
         <!--Contacts-->
         <scene sceneID="oSe-70-kk9">
             <objects>
-                <tableViewController id="yEn-Ku-nuK" customClass="ContactListTableViewController" customModule="Calendar_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yEn-Ku-nuK" customClass="ContactListTableViewController" customModule="Contacts_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iHw-0K-VgB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactListTableViewCellEntry" id="Hm9-RP-QNE" customClass="ContactListTableViewCell" customModule="Calendar_App" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactListTableViewCellEntry" id="Hm9-RP-QNE" customClass="ContactListTableViewCell" customModule="Contacts_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hm9-RP-QNE" id="wwn-qD-oAG">
@@ -65,7 +65,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="Ux0-bu-HVX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="4Z4-4n-r3h">
+                        <barButtonItem key="leftBarButtonItem" image="happy" id="4Z4-4n-r3h">
                             <connections>
                                 <action selector="didPressBookmarksButton:" destination="yEn-Ku-nuK" id="6xe-Io-r0M"/>
                             </connections>
@@ -97,7 +97,7 @@
         <!--New Contact-->
         <scene sceneID="iud-ke-k0X">
             <objects>
-                <viewController id="TmA-uJ-0B9" customClass="NewContactViewController" customModule="Calendar_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TmA-uJ-0B9" customClass="NewContactViewController" customModule="Contacts_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DGS-1e-1q6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewContactTableViewCellMainInformation" rowHeight="150" id="2Ky-BB-B5c" customClass="NewContactTableViewCell" customModule="Calendar_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewContactTableViewCellMainInformation" rowHeight="150" id="2Ky-BB-B5c" customClass="NewContactTableViewCell" customModule="Contacts_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ky-BB-B5c" id="Jek-hi-SRG">
@@ -121,7 +121,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-pa-hfE">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TmJ-Ic-Wqd" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TmJ-Ic-Wqd" customClass="CustomTextField" customModule="Contacts_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="16" width="343" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="36" id="m2T-Ic-d8T"/>
@@ -130,7 +130,7 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="given-name"/>
                                                         </textField>
-                                                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-IO-47m" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHj-IO-47m" customClass="CustomTextField" customModule="Contacts_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="60" width="343" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="HNM-m9-oMM"/>
@@ -140,7 +140,7 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
                                                         </textField>
-                                                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILO-5G-vGx" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILO-5G-vGx" customClass="CustomTextField" customModule="Contacts_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="104" width="343" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Knk-PK-sVd"/>
@@ -178,7 +178,7 @@
                                             <outlet property="lastNameTextField" destination="tHj-IO-47m" id="NAU-YJ-aaC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewContactTableViewCellListInformation" rowHeight="70" id="l3w-Ym-f5j" customClass="NewContactTableViewCell" customModule="Calendar_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewContactTableViewCellListInformation" rowHeight="70" id="l3w-Ym-f5j" customClass="NewContactTableViewCell" customModule="Contacts_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l3w-Ym-f5j" id="Jgq-k7-gnk">
@@ -188,7 +188,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1l-Ru-OkE">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-mq-iMc" customClass="CustomTextField" customModule="Calendar_App" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-mq-iMc" customClass="CustomTextField" customModule="Contacts_App" customModuleProvider="target">
                                                             <rect key="frame" x="16" y="16" width="343" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="36" id="GPx-F4-OlI"/>
@@ -268,6 +268,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="happy" width="30" height="30"/>
         <image name="phone" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

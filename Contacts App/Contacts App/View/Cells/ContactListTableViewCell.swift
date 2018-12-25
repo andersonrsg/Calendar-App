@@ -1,6 +1,6 @@
 //
 //  ContactListTableViewCell.swift
-//  Calendar App
+//  Contacts App
 //
 //  Created by Anderson Gralha on 21/12/18.
 //  Copyright © 2018 andersongralha. All rights reserved.
@@ -11,14 +11,13 @@ import UIKit
 class ContactListTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    
     private var contact: Contact?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var callButton: UIButton!
     
-    // MARK: - View Life Cycle
+    // MARK: - View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,6 +29,7 @@ class ContactListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Public Functions
     func setup(newContact: Contact?) {
         guard let contact = newContact else {
             return
@@ -80,8 +80,6 @@ class ContactListTableViewCell: UITableViewCell {
                 }
                 
             }
-            
         }
     }
-    
 }
