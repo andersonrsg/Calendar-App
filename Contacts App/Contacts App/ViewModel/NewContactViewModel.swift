@@ -12,7 +12,7 @@ import CoreData
 class NewContactViewModel {
     
     // MARK: - Properties
-    private var context: NSManagedObjectContext!
+    var context: NSManagedObjectContext!
     
     var selectedContact: Contact?
     
@@ -98,7 +98,6 @@ class NewContactViewModel {
     func addContact(success: () -> Void, failure: (String) -> Void) {    
         saveChanges(success: success, failure: failure)
     }
-    
     
     // MARK: - Private functions
     private func saveChanges(success: () -> Void, failure: (String) -> Void) {
