@@ -10,7 +10,7 @@ import UIKit
 
 extension UIFont {
     class func defaultFont(ofSize: CGFloat) -> UIFont {
-        if let font = UIFont(name: "OpenSans-Regular", size: ofSize) {
+        if let font = UIFont(name: "FiraSans-Regular", size: ofSize) {
             return font
         } else {
             return UIFont.systemFont(ofSize: ofSize)
@@ -18,18 +18,18 @@ extension UIFont {
     }
     
     class func textFieldFont(ofSize: CGFloat) -> UIFont {
-        if let font = UIFont(name: "OpenSans-SemiBold", size: ofSize) {
+        if let font = UIFont(name: "FiraSans-Thin", size: ofSize) {
             return font
         } else {
             return UIFont.systemFont(ofSize: ofSize)
         }
     }
     
-    class func textFieldHeaderFont(ofSize: CGFloat) -> UIFont {
-        if let font = UIFont(name: "OpenSans-Light", size: ofSize) {
-            return font
-        } else {
-            return UIFont.systemFont(ofSize: ofSize)
-        }
-    }
+//    class func textFieldHeaderFont(ofSize: CGFloat) -> UIFont {
+//        if let font = UIFont(name: "OpenSans-Light", size: ofSize) {
+//            return font
+//        } else {
+//            return UIFont.systemFont(ofSize: ofSize)
+//        }
+//    }
 }
