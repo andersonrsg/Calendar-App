@@ -91,7 +91,7 @@ class NewContactTableViewCell: BaseTableViewCell {
     }
     
     // MARK: - Public Functions
-    func setupMainInformation(defaultValue: Contact?) {
+    func setupMainInformation(defaultValue: RContact?) {
         super.setup()
         
         guard let contact = defaultValue else {

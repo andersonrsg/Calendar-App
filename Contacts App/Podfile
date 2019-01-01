@@ -1,15 +1,20 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '11.0'
 
   inhibit_all_warnings!
-
-target 'Contacts App' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
+def all_pods
+    pod 'RealmSwift'
+  	pod 'SwiftLint'
+  	pod 'IQKeyboardManagerSwift'
+end
+ 
 
-  # Pods for Contacts App
-  pod 'SwiftLint'
-  pod 'IQKeyboardManagerSwift'
+target 'Contacts App' do
+	all_pods
+end
 
+target 'Contacts AppTests' do
+	all_pods
 end

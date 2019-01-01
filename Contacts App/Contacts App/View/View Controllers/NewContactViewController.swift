@@ -49,7 +49,6 @@ class NewContactViewController: BaseViewController {
     private func setupLayout() {
         switch viewMode {
         case .new:
-            
             viewModel.setupNewContact()
         case .edit:
             break
@@ -79,6 +78,7 @@ class NewContactViewController: BaseViewController {
     }
     
     @IBAction func didPressDoneButton(_ sender: Any) {
+        self.view.endEditing(true)
         
         viewModel.isValidContact(success: {
             
@@ -126,11 +126,11 @@ extension NewContactViewController: UITableViewDataSource {
         if section == EnumContactDataSection.primary.rawValue {
             return 1
         } else if section == EnumContactDataSection.phone.rawValue {
-            return (viewModel.selectedContact?.phones?.count ?? 0) + 1
+            return (viewModel.selectedContact?.phones.count ?? 0) + 1
         } else if section == EnumContactDataSection.email.rawValue {
-            return (viewModel.selectedContact?.emails?.count ?? 0) + 1
+            return (viewModel.selectedContact?.emails.count ?? 0) + 1
         } else {
-            return (viewModel.selectedContact?.addresses?.count ?? 0) + 1
+            return (viewModel.selectedContact?.addresses.count ?? 0) + 1
         }
     }
     
@@ -167,16 +167,15 @@ extension NewContactViewController: UITableViewDataSource {
                     switch indexPath.section {
                     case EnumContactDataSection.phone.rawValue:
                         cell.setupDefaultValue(value:
-                            (viewModel.selectedContact?.phones?.allObjects[indexPath.row] as? Phone)?.phone ?? "")
+                            (viewModel.selectedContact?.phones[indexPath.row])?.phone ?? "")
                         
                     case EnumContactDataSection.email.rawValue:
                         cell.setupDefaultValue(value:
-                            (viewModel.selectedContact?.emails?.allObjects[indexPath.row] as? Email)?.email ?? "")
+                            (viewModel.selectedContact?.emails[indexPath.row])?.email ?? "")
                         
                     case EnumContactDataSection.address.rawValue:
                         cell.setupDefaultValue(value:
-                            (viewModel.selectedContact?.addresses?.allObjects[indexPath.row]
-                                as?Address)?.address ?? "")
+                            (viewModel.selectedContact?.addresses[indexPath.row])?.address ?? "")
                         
                     default:
                         break
@@ -228,7 +227,8 @@ extension NewContactViewController: NewContactTableViewDelegate {
             if viewModel.isLastItem(indexPath) {
                 // Adds the new index path adter the selected row
                 let newIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-                viewModel.addRow(for: newIndexPath)
+                viewModel.addRow(for: newIndexPath, update: viewMode == .new ? false : true)
+                
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
                 
                 // Reload Icons
@@ -250,35 +250,32 @@ extension NewContactViewController: NewContactTableViewDelegate {
         switch data {
         case .firstName:
             if let value = value as? String {
-                self.viewModel.selectedContact?.firstName = value
+                viewModel.setFirstName(value)
             }
             
         case .lastName:
             if let value = value as? String {
-                self.viewModel.selectedContact?.lastName = value
+                viewModel.setLastName(value)
             }
             
         case .birthday:
             if let value = value as? Date {
-                self.viewModel.selectedContact?.dateOfBirth = value
+                viewModel.setBirthDate(value)
             }
             
         case .address(let index):
-            if let value = value as? String,
-                let addresses = self.viewModel.selectedContact?.addresses?.allObjects as? [Address] {
-                addresses[index].address = value
+            if let value = value as? String {
+                viewModel.setAddress(value, forIndex: index)
             }
             
         case .phone(let index):
-            if let value = value as? String,
-                let phones = self.viewModel.selectedContact?.phones?.allObjects as? [Phone] {
-                phones[index].phone = value
+            if let value = value as? String {
+                viewModel.setPhone(value, forIndex: index)
             }
             
         case .email(let index):
-            if let value = value as? String,
-                let emails = self.viewModel.selectedContact?.emails?.allObjects as? [Email] {
-                emails[index].email = value
+            if let value = value as? String {
+                viewModel.setEmail(value, forIndex: index)
             }
             
         }

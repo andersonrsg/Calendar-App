@@ -62,9 +62,10 @@ class ContactListTableViewController: UITableViewController {
             if segue.identifier == "GoToNewContactView" {
                 destination.viewMode = .new
             } else {
-                destination.viewMode = .view
-                destination.viewModel.selectedContact = viewModel.selectedContact
-                //                destination.viewModel.contactList = viewModel.contactList
+                if let contact = viewModel.selectedContact {
+                    destination.viewMode = .view
+                    destination.viewModel.selectedContact = contact
+                }
             }
         }
         
@@ -90,7 +91,7 @@ class ContactListTableViewController: UITableViewController {
     @objc private func refreshContactList(_ sender: Any) {
         self.viewModel.fetchContacts(success: { [weak self] in
             self?.tableView.reloadData()
-            self?.refreshControl?.endRefreshing()
+//            self?.refreshControl?.endRefreshing()
         })
     }
     
@@ -103,7 +104,7 @@ class ContactListTableViewController: UITableViewController {
         if viewModel.isSearching {
             return viewModel.searchResults?.count ?? 0
         } else {
-            return viewModel.contactList?.sections?[section].objects?.count ?? 0
+            return viewModel.contactList?.count ?? 0
         }
     }
     
@@ -116,7 +117,7 @@ class ContactListTableViewController: UITableViewController {
         if viewModel.isSearching {
             cell.setup(newContact: viewModel.searchResults?[indexPath.row])
         } else {
-            cell.setup(newContact: viewModel.contactList.object(at: indexPath))
+            cell.setup(newContact: viewModel.contactList?[indexPath.row])
         }
         
         return cell
@@ -131,20 +132,18 @@ class ContactListTableViewController: UITableViewController {
             title: "Delete") { [weak self] _, _, completion  in
                 
                 if self?.viewModel.isSearching ?? false {
-                    
-                    if let contact = self?.viewModel.searchResults?[indexPath.row] {
-                        self?.viewModel.contactList.managedObjectContext.delete(contact)
-                        self?.viewModel.saveChanges()
-                    }
+                
+                    Database.shared.removeContact(contact: self?.viewModel.searchResults?[indexPath.row], success: {
+                    }, failure: { error in
+                    })
                     
                     completion(true)
                     
                 } else {
                     
-                    if let contact = self?.viewModel.contactList.object(at: indexPath) {
-                        self?.viewModel.contactList.managedObjectContext.delete(contact)
-                        self?.viewModel.saveChanges()
-                    }
+                    Database.shared.removeContact(contact: self?.viewModel.contactList?[indexPath.row], success: {
+                    }, failure: { error in
+                    })
                     
                     completion(true)
                 }
@@ -162,7 +161,7 @@ class ContactListTableViewController: UITableViewController {
         if viewModel.isSearching {
             self.viewModel.selectedContact = viewModel.searchResults?[indexPath.row]
         } else {
-            self.viewModel.selectedContact = viewModel.contactList.object(at: indexPath)
+            self.viewModel.selectedContact = viewModel.contactList?[indexPath.row]
         }
         self.performSegue(withIdentifier: "GoToViewContactView", sender: self)
         

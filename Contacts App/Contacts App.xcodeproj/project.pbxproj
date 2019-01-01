@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C3C5CADBEA2838ADA233BDF /* Pods_Contacts_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CE643230AB4541303D66A2 /* Pods_Contacts_AppTests.framework */; };
 		7102AF5B21D10CDC000757AB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102AF5A21D10CDC000757AB /* UIColorExtension.swift */; };
-		7102AF6E21D15BCF000757AB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 7102AF6D21D15BCF000757AB /* .gitkeep */; };
 		711BE90221D0858100A7F45F /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 711BE90021D0858100A7F45F /* HockeySDKResources.bundle */; };
 		711BE90521D0858100A7F45F /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BE90121D0858100A7F45F /* HockeySDK.framework */; };
 		71229CB321D9333200AA8A06 /* FiraSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71229CA021D9333200AA8A06 /* FiraSans-Thin.ttf */; };
@@ -71,6 +71,8 @@
 		715750D121D3959E00CA38F7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
 		715750D221D395AE00CA38F7 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71C595D721CA64EA004DB76A /* Contacts.xcdatamodeld */; };
 		715750D421D3975E00CA38F7 /* NewContactViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715750D321D3975E00CA38F7 /* NewContactViewModelTests.swift */; };
+		718A7D0021DBAD8000A5B6C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A7CFF21DBAD8000A5B6C8 /* StringExtension.swift */; };
+		718A7D0121DBAD8000A5B6C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A7CFF21DBAD8000A5B6C8 /* StringExtension.swift */; };
 		71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */; };
 		71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */; };
 		71A35DBA21CD462E000BE53F /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */; };
@@ -88,6 +90,18 @@
 		71C5961421CB233F004DB76A /* NewContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961321CB233F004DB76A /* NewContactViewModel.swift */; };
 		71C5961821CB234D004DB76A /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961721CB234D004DB76A /* NewContactViewController.swift */; };
 		71C5961D21CB25B1004DB76A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C5961C21CB25B1004DB76A /* Constants.swift */; };
+		71CCF2EE21D96E5600FB47E9 /* ResultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CCF2ED21D96E5600FB47E9 /* ResultsExtension.swift */; };
+		71CCF2EF21D96E5900FB47E9 /* ResultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CCF2ED21D96E5600FB47E9 /* ResultsExtension.swift */; };
+		71CE4A3821D94F3D00495E3A /* RContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3721D94F3D00495E3A /* RContact.swift */; };
+		71CE4A3A21D9503A00495E3A /* REmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3921D9503900495E3A /* REmail.swift */; };
+		71CE4A3C21D9504800495E3A /* RAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3B21D9504800495E3A /* RAddress.swift */; };
+		71CE4A3E21D9505700495E3A /* RPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3D21D9505700495E3A /* RPhone.swift */; };
+		71CE4A4021D950B800495E3A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3F21D950B800495E3A /* Database.swift */; };
+		71CE4A4121D950BC00495E3A /* RAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3B21D9504800495E3A /* RAddress.swift */; };
+		71CE4A4221D950BC00495E3A /* RContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3721D94F3D00495E3A /* RContact.swift */; };
+		71CE4A4321D950BC00495E3A /* REmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3921D9503900495E3A /* REmail.swift */; };
+		71CE4A4421D950BC00495E3A /* RPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3D21D9505700495E3A /* RPhone.swift */; };
+		71CE4A4521D950BC00495E3A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE4A3F21D950B800495E3A /* Database.swift */; };
 		71DEDE3321CEC03000007641 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3221CEC03000007641 /* BaseViewController.swift */; };
 		71DEDE3621CEE35000007641 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE3521CEE35000007641 /* Enums.swift */; };
 		71DEDE5821CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */; };
@@ -109,8 +123,8 @@
 
 /* Begin PBXFileReference section */
 		19732C1690AF8ABE88D247D3 /* Pods-Contacts App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App.debug.xcconfig"; sourceTree = "<group>"; };
+		60CE643230AB4541303D66A2 /* Pods_Contacts_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contacts_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7102AF5A21D10CDC000757AB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		7102AF6D21D15BCF000757AB /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		711BE90021D0858100A7F45F /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		711BE90121D0858100A7F45F /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		71229CA021D9333200AA8A06 /* FiraSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Thin.ttf"; sourceTree = "<group>"; };
@@ -136,6 +150,7 @@
 		715750B621D38F5900CA38F7 /* ContactListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModelTests.swift; sourceTree = "<group>"; };
 		715750B821D38F5900CA38F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		715750D321D3975E00CA38F7 /* NewContactViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModelTests.swift; sourceTree = "<group>"; };
+		718A7CFF21DBAD8000A5B6C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		71A35DA921CC71FD000BE53F /* NewContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCell.swift; sourceTree = "<group>"; };
 		71A35DB721CD45F7000BE53F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
@@ -155,6 +170,12 @@
 		71C5961321CB233F004DB76A /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
 		71C5961721CB234D004DB76A /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		71C5961C21CB25B1004DB76A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		71CCF2ED21D96E5600FB47E9 /* ResultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsExtension.swift; sourceTree = "<group>"; };
+		71CE4A3721D94F3D00495E3A /* RContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RContact.swift; sourceTree = "<group>"; };
+		71CE4A3921D9503900495E3A /* REmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REmail.swift; sourceTree = "<group>"; };
+		71CE4A3B21D9504800495E3A /* RAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAddress.swift; sourceTree = "<group>"; };
+		71CE4A3D21D9505700495E3A /* RPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPhone.swift; sourceTree = "<group>"; };
+		71CE4A3F21D950B800495E3A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		71DEDE3221CEC03000007641 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		71DEDE3521CEE35000007641 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		71DEDE5721CEF35000007641 /* NewContactTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactTableViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +184,8 @@
 		71DEDE6221D0211100007641 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		82C9002A3CD01E7D62ECA520 /* Pods_Contacts_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contacts_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD607A566845C186BD32A968 /* Pods-Contacts App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App.release.xcconfig"; sourceTree = "<group>"; };
+		E3840B19A59219B5A772CAC1 /* Pods-Contacts AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Contacts AppTests/Pods-Contacts AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F47B03843E63E55520FE36CA /* Pods-Contacts AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Contacts AppTests/Pods-Contacts AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C3C5CADBEA2838ADA233BDF /* Pods_Contacts_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +214,7 @@
 			children = (
 				711BE8FF21D0858100A7F45F /* HockeySDK.embeddedframework */,
 				82C9002A3CD01E7D62ECA520 /* Pods_Contacts_App.framework */,
+				60CE643230AB4541303D66A2 /* Pods_Contacts_AppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,7 +312,11 @@
 		71C5960121CA6EE5004DB76A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7102AF6D21D15BCF000757AB /* .gitkeep */,
+				71CE4A3B21D9504800495E3A /* RAddress.swift */,
+				71CE4A3721D94F3D00495E3A /* RContact.swift */,
+				71CE4A3921D9503900495E3A /* REmail.swift */,
+				71CE4A3D21D9505700495E3A /* RPhone.swift */,
+				71CE4A3F21D950B800495E3A /* Database.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +348,8 @@
 				71DEDE6221D0211100007641 /* DateExtension.swift */,
 				71A35DB921CD462E000BE53F /* UITableViewCellExtension.swift */,
 				71DEDE5A21CEF5EB00007641 /* UITextFieldExtension.swift */,
+				71CCF2ED21D96E5600FB47E9 /* ResultsExtension.swift */,
+				718A7CFF21DBAD8000A5B6C8 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,6 +426,8 @@
 			children = (
 				19732C1690AF8ABE88D247D3 /* Pods-Contacts App.debug.xcconfig */,
 				DD607A566845C186BD32A968 /* Pods-Contacts App.release.xcconfig */,
+				F47B03843E63E55520FE36CA /* Pods-Contacts AppTests.debug.xcconfig */,
+				E3840B19A59219B5A772CAC1 /* Pods-Contacts AppTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -406,9 +439,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 715750BB21D38F5900CA38F7 /* Build configuration list for PBXNativeTarget "Contacts AppTests" */;
 			buildPhases = (
+				9FB7599C816B92195CBED7AC /* [CP] Check Pods Manifest.lock */,
 				715750B021D38F5900CA38F7 /* Sources */,
 				715750B121D38F5900CA38F7 /* Frameworks */,
 				715750B221D38F5900CA38F7 /* Resources */,
+				074012219F86D7431E4C563D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -515,7 +550,6 @@
 				71229CCD21D9333200AA8A06 /* FiraSans-ExtraBold.ttf in Resources */,
 				71C595DE21CA64EB004DB76A /* LaunchScreen.storyboard in Resources */,
 				711BE90221D0858100A7F45F /* HockeySDKResources.bundle in Resources */,
-				7102AF6E21D15BCF000757AB /* .gitkeep in Resources */,
 				71229CC521D9333200AA8A06 /* FiraSans-BlackItalic.ttf in Resources */,
 				71229CD321D9333200AA8A06 /* FiraSans-ExtraBoldItalic.ttf in Resources */,
 				71C595DB21CA64EB004DB76A /* Assets.xcassets in Resources */,
@@ -540,6 +574,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		074012219F86D7431E4C563D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Contacts AppTests/Pods-Contacts AppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Contacts AppTests/Pods-Contacts AppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		40434D858E7EFE2DE4ED9145 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,10 +604,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Contacts App/Pods-Contacts App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -589,6 +649,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		9FB7599C816B92195CBED7AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Contacts AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -599,11 +677,16 @@
 				715750CF21D3959E00CA38F7 /* ContactListTableViewController.swift in Sources */,
 				715750D021D3959E00CA38F7 /* NewContactViewController.swift in Sources */,
 				715750C721D3959000CA38F7 /* Session.swift in Sources */,
+				71CE4A4321D950BC00495E3A /* REmail.swift in Sources */,
 				715750B721D38F5900CA38F7 /* ContactListViewModelTests.swift in Sources */,
+				71CE4A4421D950BC00495E3A /* RPhone.swift in Sources */,
 				715750C521D3958D00CA38F7 /* UITextFieldExtension.swift in Sources */,
 				715750D221D395AE00CA38F7 /* Contacts.xcdatamodeld in Sources */,
+				71CCF2EF21D96E5900FB47E9 /* ResultsExtension.swift in Sources */,
 				715750D121D3959E00CA38F7 /* BaseViewController.swift in Sources */,
+				71CE4A4221D950BC00495E3A /* RContact.swift in Sources */,
 				715750CE21D3959E00CA38F7 /* NewContactTableViewCell.swift in Sources */,
+				718A7D0121DBAD8000A5B6C8 /* StringExtension.swift in Sources */,
 				715750C921D3959300CA38F7 /* CoreDataStack.swift in Sources */,
 				715750CD21D3959E00CA38F7 /* ContactListTableViewCell.swift in Sources */,
 				715750D421D3975E00CA38F7 /* NewContactViewModelTests.swift in Sources */,
@@ -615,7 +698,9 @@
 				715750CA21D3959800CA38F7 /* NewContactViewModel.swift in Sources */,
 				715750C121D3958D00CA38F7 /* UIColorExtension.swift in Sources */,
 				715750C621D3959000CA38F7 /* Constants.swift in Sources */,
+				71CE4A4121D950BC00495E3A /* RAddress.swift in Sources */,
 				715750CB21D3959800CA38F7 /* NewContactTableViewCellViewModel.swift in Sources */,
+				71CE4A4521D950BC00495E3A /* Database.swift in Sources */,
 				715750CC21D3959E00CA38F7 /* BaseTableViewCell.swift in Sources */,
 				715750C821D3959000CA38F7 /* Enums.swift in Sources */,
 			);
@@ -626,13 +711,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C5960B21CB20FC004DB76A /* ContactListTableViewController.swift in Sources */,
+				71CE4A3C21D9504800495E3A /* RAddress.swift in Sources */,
+				71CE4A3821D94F3D00495E3A /* RContact.swift in Sources */,
 				71DEDE6321D0211100007641 /* DateExtension.swift in Sources */,
 				71DEDE5E21CF07A500007641 /* UIFontExtension.swift in Sources */,
 				71DEDE5B21CEF5EB00007641 /* UITextFieldExtension.swift in Sources */,
 				71C5961421CB233F004DB76A /* NewContactViewModel.swift in Sources */,
 				71C5961021CB232B004DB76A /* ContactListViewModel.swift in Sources */,
+				718A7D0021DBAD8000A5B6C8 /* StringExtension.swift in Sources */,
 				71BA141421CDA17C003D7933 /* CoreDataStack.swift in Sources */,
 				71DEDE5821CEF35000007641 /* NewContactTableViewCellViewModel.swift in Sources */,
+				71CCF2EE21D96E5600FB47E9 /* ResultsExtension.swift in Sources */,
 				7102AF5B21D10CDC000757AB /* UIColorExtension.swift in Sources */,
 				71BA141721CDA6B5003D7933 /* ContactListTableViewCell.swift in Sources */,
 				71DEDE3321CEC03000007641 /* BaseViewController.swift in Sources */,
@@ -642,9 +731,12 @@
 				71BA141A21CDC684003D7933 /* Session.swift in Sources */,
 				71C5961821CB234D004DB76A /* NewContactViewController.swift in Sources */,
 				71A35DAA21CC71FD000BE53F /* NewContactTableViewCell.swift in Sources */,
+				71CE4A3E21D9505700495E3A /* RPhone.swift in Sources */,
+				71CE4A3A21D9503A00495E3A /* REmail.swift in Sources */,
 				71A35DB821CD45F7000BE53F /* BaseTableViewCell.swift in Sources */,
 				71C595D121CA64EA004DB76A /* AppDelegate.swift in Sources */,
 				71DEDE3621CEE35000007641 /* Enums.swift in Sources */,
+				71CE4A4021D950B800495E3A /* Database.swift in Sources */,
 				71A35DBA21CD462E000BE53F /* UITableViewCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +773,7 @@
 /* Begin XCBuildConfiguration section */
 		715750BC21D38F5900CA38F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F47B03843E63E55520FE36CA /* Pods-Contacts AppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -701,6 +794,7 @@
 		};
 		715750BD21D38F5900CA38F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3840B19A59219B5A772CAC1 /* Pods-Contacts AppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -770,7 +864,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -825,7 +919,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

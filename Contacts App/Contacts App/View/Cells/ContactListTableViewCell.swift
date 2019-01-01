@@ -11,7 +11,7 @@ import UIKit
 class ContactListTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    private var contact: Contact?
+    private var contact: RContact?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,7 +30,7 @@ class ContactListTableViewCell: UITableViewCell {
     }
     
     // MARK: - Public Functions
-    func setup(newContact: Contact?) {
+    func setup(newContact: RContact?) {
         guard let contact = newContact else {
             return
         }
@@ -38,10 +38,11 @@ class ContactListTableViewCell: UITableViewCell {
         self.contact = contact
         
         var labelText = ""
-        labelText = contact.firstName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        labelText = contact.firstName.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        if let lastName = contact.lastName {
-            labelText = "\(labelText) \(lastName)".trimmingCharacters(in: .whitespacesAndNewlines)
+        let lastName = contact.lastName.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !lastName.isEmpty {
+            labelText = "\(labelText) \(lastName)"
         }
         if labelText == "" {
             labelText = "No Name"
@@ -68,7 +69,7 @@ class ContactListTableViewCell: UITableViewCell {
             return
         }
         
-        let phone = contact.phones?.allObjects.first as? Phone
+        let phone = contact.phones.first
         if var phoneNumber = phone?.phone, phoneNumber != "" {
             phoneNumber = phoneNumber.trimmingCharacters(in: .whitespacesAndNewlines)
             if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
