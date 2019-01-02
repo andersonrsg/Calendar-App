@@ -9,6 +9,6 @@
 import UIKit
 import RealmSwift
 
-class RPhone: Object {
+class Phone: Object {
     @objc dynamic var phone = ""
 }

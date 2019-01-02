@@ -71,9 +71,7 @@ class NewContactViewController: BaseViewController {
     
     // MARK: - Actions
     @objc func didPressBackButton(_ sender: Any) {
-        if viewMode == .new {
-            self.viewModel.discardChanges()
-        }
+        delegate?.didFinishAddingContact()
         self.navigationController?.popViewController(animated: true)
     }
     

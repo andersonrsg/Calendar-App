@@ -9,16 +9,16 @@
 import UIKit
 import RealmSwift
 
-class RContact: Object {
+class Contact: Object {
     
     @objc dynamic var id = ""
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
     @objc dynamic var dateOfBirth: Date?
     
-    let phones = List<RPhone>()
-    let emails = List<REmail>()
-    let addresses = List<RAddress>()
+    var phones = List<Phone>()
+    var emails = List<Email>()
+    var addresses = List<Address>()
  
     override static func primaryKey() -> String? {
         return "id"

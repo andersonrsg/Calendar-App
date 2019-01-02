@@ -25,6 +25,7 @@ class ContactListTableViewController: UITableViewController {
         
         self.setupSearch()
         self.refreshContactList(self)
+//        self.setupRefreshControl()
         
     }
     
@@ -91,7 +92,7 @@ class ContactListTableViewController: UITableViewController {
     @objc private func refreshContactList(_ sender: Any) {
         self.viewModel.fetchContacts(success: { [weak self] in
             self?.tableView.reloadData()
-//            self?.refreshControl?.endRefreshing()
+            self?.refreshControl?.endRefreshing()
         })
     }
     

@@ -1,5 +1,5 @@
 //
-//  REmail.swift
+//  RAddress.swift
 //  Contacts App
 //
 //  Created by Anderson Gralha on 30/12/18.
@@ -9,6 +9,6 @@
 import UIKit
 import RealmSwift
 
-class REmail: Object {
-    @objc dynamic var email = ""
+class Address: Object {
+    @objc dynamic var address = ""
 }

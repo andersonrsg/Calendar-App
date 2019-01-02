@@ -18,18 +18,11 @@ extension UIFont {
     }
     
     class func textFieldFont(ofSize: CGFloat) -> UIFont {
-        if let font = UIFont(name: "FiraSans-Thin", size: ofSize) {
+        if let font = UIFont(name: "Helvetica-Light", size: ofSize) {
             return font
         } else {
             return UIFont.systemFont(ofSize: ofSize)
         }
     }
     
-//    class func textFieldHeaderFont(ofSize: CGFloat) -> UIFont {
-//        if let font = UIFont(name: "OpenSans-Light", size: ofSize) {
-//            return font
-//        } else {
-//            return UIFont.systemFont(ofSize: ofSize)
-//        }
-//    }
 }

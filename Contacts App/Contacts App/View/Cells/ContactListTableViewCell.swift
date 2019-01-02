@@ -11,7 +11,7 @@ import UIKit
 class ContactListTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    private var contact: RContact?
+    private var contact: Contact?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -30,7 +30,7 @@ class ContactListTableViewCell: UITableViewCell {
     }
     
     // MARK: - Public Functions
-    func setup(newContact: RContact?) {
+    func setup(newContact: Contact?) {
         guard let contact = newContact else {
             return
         }

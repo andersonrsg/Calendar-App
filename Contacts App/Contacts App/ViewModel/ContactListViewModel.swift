@@ -12,13 +12,13 @@ import CoreData
 class ContactListViewModel: NSObject {
     
     // MARK: - Properties
-    var contactList: [RContact]?
+    var contactList: [Contact]?
     
-    var searchResults: [RContact]?
+    var searchResults: [Contact]?
     
     var isSearching = false
     
-    var selectedContact: RContact?
+    var selectedContact: Contact?
     
     // MARK: - Init
     override init() {
@@ -27,39 +27,28 @@ class ContactListViewModel: NSObject {
     
     // MARK: - Actions
     func addBookmarks(success: () -> Void) {
-        // Remove all contacts and add a dummy one
+        // Add a dummy contact
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
-        let deleteRequet = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        do {
-            
-            try CoreDataStack.shared.persistentContainer.persistentStoreCoordinator.execute(
-                deleteRequet,
-                with: CoreDataStack.shared.persistentContainer.viewContext
-            )
-            
-        } catch {
-            print(error)
-        }
+        let contact = Contact()
+        let email = Email()
+        let phone = Phone()
         
-        let context = CoreDataStack.shared.persistentContainer.viewContext
-        
-        let contact = Contact(context: context)
-        contact.firstName = "Anderson"
-        contact.lastName = "Gralha"
-        let email = Email(context: context)
         email.email = "anderson.gralha@gmail.com"
-        
-        let phone = Phone(context: context)
         phone.phone = "+5551985666714"
         
-        contact.addToEmails(email)
-        contact.addToPhones(phone)
+        contact.id = Database.shared.getNewPrimaryKey()
+        contact.firstName = "Anderson"
+        contact.lastName = "Gralha"
+        contact.emails.append(email)
+        contact.phones.append(phone)
         
-        CoreDataStack.shared.saveContext()
-        fetchContacts {
-            success()
-        }
+        Database.shared.addContact(contact: contact, success: {
+            fetchContacts {
+                success()
+            }
+        }, failure: { _ in
+        })
+        
     }
     
     // MARK: - Public Functions
@@ -73,15 +62,6 @@ class ContactListViewModel: NSObject {
         })
         
     }
-    
-//    func saveChanges() {
-//        do {
-//            try contactList.managedObjectContext.save()
-//            fetchContacts {}
-//        } catch {
-//            print(error)
-//        }
-//    }
     
     func filterContacts(text: String, _ callback: @escaping () -> Void) {
         let lowerCasedText = text.lowercased()

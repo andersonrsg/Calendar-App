@@ -15,8 +15,10 @@ class BaseViewController: UIViewController {
     }
     
     func showAlert(title: String? = nil, error: String) {
-        let alert = UIAlertController(title: title ?? "Error",
-                                      message: error, preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: title ?? "Error",
+            message: error,
+            preferredStyle: .alert)
         
         let action = UIAlertAction(title: "OK", style: .cancel) { _ in }
         

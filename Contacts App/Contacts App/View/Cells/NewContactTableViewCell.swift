@@ -71,8 +71,11 @@ class NewContactTableViewCell: BaseTableViewCell {
     var currentDataField: EnumDataField!
     
     // MARK: - Outlets
+    
     @IBOutlet weak var firstNameTextField: UITextField!
+    
     @IBOutlet weak var lastNameTextField: UITextField!
+    
     @IBOutlet weak var birthDayTextField: UITextField!
     
     @IBOutlet weak var dataTextField: UITextField!
@@ -91,7 +94,8 @@ class NewContactTableViewCell: BaseTableViewCell {
     }
     
     // MARK: - Public Functions
-    func setupMainInformation(defaultValue: RContact?) {
+    
+    func setupMainInformation(defaultValue: Contact?) {
         super.setup()
         
         guard let contact = defaultValue else {

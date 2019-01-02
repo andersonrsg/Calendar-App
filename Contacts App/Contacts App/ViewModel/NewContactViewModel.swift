@@ -12,7 +12,7 @@ import CoreData
 class NewContactViewModel {
     
     // MARK: - Properties
-    var selectedContact: RContact?
+    var selectedContact: Contact?
     
     // Set the isUpdating contact false if adding a new contact
     var isUpdating = true
@@ -23,13 +23,9 @@ class NewContactViewModel {
     
     // MARK: - Public Functions
     func setupNewContact() {
-        selectedContact = RContact()
-        selectedContact?.id = String.randomString(length: 50)
+        selectedContact = Contact()
+        selectedContact?.id = Database.shared.getNewPrimaryKey()
         isUpdating = false
-    }
-    
-    func discardChanges() {
-        CoreDataStack.shared.discardChanges()
     }
     
     func isLastItem(_ indexPath: IndexPath) -> Bool {
@@ -63,7 +59,7 @@ class NewContactViewModel {
         }
         switch indexPath.section {
         case EnumContactDataSection.phone.rawValue:
-            let phone = RPhone()
+            let phone = Phone()
             
             if update ?? false {
                 Database.shared.updateContact(contact: contact,
@@ -73,7 +69,7 @@ class NewContactViewModel {
                 contact.phones.append(phone)
             }
         case EnumContactDataSection.email.rawValue:
-            let email = REmail()
+            let email = Email()
             
             if update ?? false {
                 Database.shared.updateContact(contact: contact,
@@ -84,7 +80,7 @@ class NewContactViewModel {
             }
             
         case EnumContactDataSection.address.rawValue:
-            let address = RAddress()
+            let address = Address()
             
             if update ?? false {
                 Database.shared.updateContact(contact: contact,
@@ -166,6 +162,7 @@ class NewContactViewModel {
     }
     
     // MARK: - Update Contact Functions
+    
     func setFirstName(_ value: String) {
         guard let contact = selectedContact else {
             return
@@ -207,7 +204,7 @@ class NewContactViewModel {
             return
         }
         if isUpdating {
-            let phone = RPhone()
+            let phone = Phone()
             phone.phone = value
             Database.shared.updateContact(contact: contact,
                                           phone: phone,
@@ -222,7 +219,7 @@ class NewContactViewModel {
             return
         }
         if isUpdating {
-            let email = REmail()
+            let email = Email()
             email.email = value
             Database.shared.updateContact(contact: contact,
                                           email: email,
@@ -237,7 +234,7 @@ class NewContactViewModel {
             return
         }
         if isUpdating {
-            let address = RAddress()
+            let address = Address()
             address.address = value
             Database.shared.updateContact(contact: contact,
                                           address: address,
@@ -245,20 +242,6 @@ class NewContactViewModel {
         } else {
             contact.addresses[forIndex].address = value
         }
-    }
-    
-    // MARK: - Private functions
-    private func saveChanges(success: () -> Void, failure: (String) -> Void) {
-        
-        
-        //        do {
-        //            try context.save()
-        //            print("DATA SAVED WITH SUCCESS.")
-        //            success()
-        //        } catch {
-        //            print("FAILED TO SAVE DATA: \(error)")
-        //            failure(error.localizedDescription)
-        //        }
     }
     
 }
