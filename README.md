@@ -2,7 +2,7 @@
 
 Simple Contacts App
 
-* Basic CRUD Functionality Using Core Data
+* Basic CRUD Functionality Using Realm
 * Search
 * Swift Lint for Better Code Practices
-* IQKeyboardManager
+* Unit Tests
